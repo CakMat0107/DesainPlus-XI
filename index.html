@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silabus Desain Grafis - MA Plus Sunan Giri</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS Terpisah -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Utama -->
+    <header class="main-header">
+        <div class="header-container">
+            <h1>Kurikulum Peminatan IT: Desain Grafis</h1>
+            <p>MA Plus Sunan Giri • Tahun Ajaran</p>
+        </div>
+    </header>
+
+    <!-- Sticky Navigation Bar (Menu Semester & Tombol Tema) -->
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <div class="semester-tabs">
+                <button class="tab-btn active" onclick="switchSemester(1)">Semester 1: Vektor (CorelDRAW)</button>
+                <button class="tab-btn" onclick="switchSemester(2)">Semester 2: Ekosistem Industri</button>
+            </div>
+            <!-- Tombol disesuaikan default ke Mode Terang karena halaman awal gelap -->
+            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Ganti Tema">
+                ☀️ Mode Terang
+            </button>
+        </div>
+    </nav>
+
+    <!-- Konten Utama Silabus -->
+    <main class="content-container">
+
+        <!-- ================= SEMESTER 1 ================= -->
+        <section id="semester-1" class="semester-content active-semester">
+            <div class="semester-banner">
+                <h2>Semester 1: Fondasi Vektor & CorelDRAW</h2>
+                <p>Alokasi: 15 Pertemuan (3 x 40 Menit / Pertemuan)</p>
+            </div>
+
+            <!-- Bagian 1 -->
+            <div class="phase-section">
+                <h3 class="phase-title">Bagian 1: Fondasi, Logika Aset, & Vektorisasi Dasar</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <span><a href="pertemuan_1.html" class="meeting-badge">Pertemuan 1</a></span>
+                        <h4>Mindset Desainer & Logika Aset Digital</h4>
+                        <p>Membangun mental komunikasi visual, perbedaan Vektor vs Bitmap, dan navigasi mata audiens.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_2.html" class="meeting-badge">Pertemuan 2</a></span>
+                        <h4>Navigasi CorelDRAW & Bentuk Dasar</h4>
+                        <p>Mengenal antarmuka, bentuk dasar, serta manipulasi objek via Weld, Trim, dan Intersect.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_3.html" class="meeting-badge">Pertemuan 3</a></span>
+                        <h4>Menjinakkan Kurva & Pen Tool</h4>
+                        <p>Melatih kelenturan kurva, pengaturan titik node, dan teknik tracing aset bitmap ke vektor.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian 2 -->
+            <div class="phase-section">
+                <h3 class="phase-title">Bagian 2: Manipulasi Vektor Lanjutan & Efek Visual</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <span><a href="pertemuan_4.html" class="meeting-badge">Pertemuan 4</a></span>
+                        <h4>Shape Tool & Pathfinding Lanjutan</h4>
+                        <p>Modifikasi node mendalam, fungsi Simplify, Front Minus Back, dan Join Curves.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_5.html" class="meeting-badge">Pertemuan 5</a></span>
+                        <h4>Warna, Gradasi, & Dimensi</h4>
+                        <p>CMYK vs RGB, penggunaan Fountain Fill, Mesh Fill, dan Interactive Transparency.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_6.html" class="meeting-badge">Pertemuan 6</a></span>
+                        <h4>Tipografi Kreatif & Teks</h4>
+                        <p>Artistic vs Paragraph text, pengaturan kerning/tracking, dan teknik Text on Path.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian 3 -->
+            <div class="phase-section">
+                <h3 class="phase-title">Bagian 3: Desain Identitas Visual & Media Publikasi</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <span><a href="pertemuan_7.html" class="meeting-badge">Pertemuan 7</a></span>
+                        <h4>Identitas Visual: Logo & Filosofi</h4>
+                        <p>Standar logo profesional, skala keabadian, bentuk hitam-putih, dan grid system.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_8.html" class="meeting-badge">Pertemuan 8</a></span>
+                        <h4>Alat Peraga Promosi & PowerClip</h4>
+                        <p>Desain kartu nama, ID card, pengaturan bleed/safe zone, dan integrasi fitur PowerClip.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_9.html" class="meeting-badge">Pertemuan 9</a></span>
+                        <h4>Media Sosial & Infografis</h4>
+                        <p>Standar ukuran piksel digital, alignment presisi, dan pembuatan set feed/infografis.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_10.html" class="meeting-badge">Pertemuan 10</a></span>
+                        <h4>Desain Kemasan Produk (Packaging)</h4>
+                        <p>Memahami jaring-jaring kemasan, garis potong, dan tata letak informasi produk wajib.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian 4 -->
+            <div class="phase-section">
+                <h3 class="phase-title">Bagian 4: Skala Besar, Teknik Cetak, & Proyek Akhir</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <span><a href="pertemuan_11.html" class="meeting-badge">Pertemuan 11</a></span>
+                        <h4>Media Luar Ruang: Banner & Spanduk</h4>
+                        <p>Penyesuaian skala ukuran besar, keunggulan vektor, dan keterbacaan jarak jauh.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_12.html" class="meeting-badge">Pertemuan 12</a></span>
+                        <h4>Manajemen File & Pre-flight Check</h4>
+                        <p>Fungsi ekspor PDF cetak, PNG transparan, dan konversi versi file CorelDRAW lama.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_13.html" class="meeting-badge">Pertemuan 13</a></      span>
+                        <h4>Eksekusi Proyek Akhir (Tahap 1)</h4>
+                        <p>Pengerjaan mandiri paket branding UMKM (Logo + Label Kemasan + Kartu Nama).</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_14.html" class="meeting-badge">Pertemuan 14</a></span>
+                        <h4>Finalisasi & Penyusunan Portofolio</h4>
+                        <p>Penyempurnaan detail desain, pengecekan warna akhir, dan pengarsipan folder kerja.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_15.html" class="meeting-badge">Pertemuan 15</a></span>
+                        <h4>Pameran Mini & Evaluasi Akhir</h4>
+                        <p>Sesi presentasi karya di depan kelas (*exhibition*) dan ulasan sejawat (*peer review*).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SEMESTER 2 ================= -->
+        <section id="semester-2" class="semester-content">
+            <div class="semester-banner">
+                <h2>Semester 2: Ekosistem Industri Kreatif Modern</h2>
+                <p>Alokasi: 15 Pertemuan (3 x 40 Menit / Pertemuan) • Adobe, 3D, Canva, & AI</p>
+            </div>
+
+            <!-- Bagian 1 -->
+            <div class="phase-section">
+                <h3 class="phase-title">Bagian 1: Vektor Industri & Manipulasi Raster Profesional</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <span><a href="pertemuan_16.html" class="meeting-badge">Pertemuan 1</a></span>
+                        <h4>Adobe Illustrator & Vektor Industri</h4>
+                        <p>Antarmuka AI, penggunaan Artboards, dan penguasaan Pen Tool tingkat lanjut ala industri.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_17.html" class="meeting-badge">Pertemuan 2</a></span>
+                        <h4>AI: Advanced Shaping & Pattern</h4>
+                        <p>Eksplorasi Pathfinder, Shape Builder Tool, dan pembuatan pola otomatis (*Pattern Design*).</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_18.html" class="meeting-badge">Pertemuan 3</a></span>
+                        <h4>Adobe Photoshop: Retouching & Masking</h4>
+                        <p>Non-destructive editing, Layer Mask, teknik seleksi presisi, dan pemotongan objek halus.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_19.html" class="meeting-badge">Pertemuan 4</a></span>
+                        <h4>Photoshop: Color Grading & Komposit</h4>
+                        <p>Adjustment Layers, teknik Dodge & Burn, serta penggabungan foto sinematik/surealis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian 2 -->
+            <div class="phase-section">
+                <h3 class="phase-title">Bagian 2: Fotografi Digital, Tata Letak Publikasi, & Kolaborasi</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <span><a href="pertemuan_20.html" class="meeting-badge">Pertemuan 5</a></span>
+                        <h4>Adobe Lightroom: Manajemen & Preset</h4>
+                        <p>Pengolahan file RAW, Tone Curve dasar, dan pembuatan preset warna foto konsisten.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_21.html" class="meeting-badge">Pertemuan 6</a></span>
+                        <h4>Adobe InDesign: Layout Multi-Halaman</h4>
+                        <p>Konsep Master Pages, Grid & Column, serta manajemen Paragraph/Character Styles.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_22.html" class="meeting-badge">Pertemuan 7</a></span>
+                        <h4>InDesign: Produksi Majalah Sekolah</h4>
+                        <p>Text Flow, Text Wrap, penataan gambar/teks, dan ekspor dokumen siap cetak interaktif.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_23.html" class="meeting-badge">Pertemuan 8</a></span>
+                        <h4>Canva: Kolaborasi & Pitch Deck</h4>
+                        <p>Kolaborasi real-time, manajemen Brand Kit, dan integrasi aset lintas platform web.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian 3 -->
+            <div class="phase-section">
+                <h3 class="phase-title">Bagian 3: Visual 3D Dasar & AI Generative Art</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <span><a href="pertemuan_24.html" class="meeting-badge">Pertemuan 9</a></span>
+                        <h4>Pengenalan 3D (SketchUp / Blender)</h4>
+                        <p>Navigasi sumbu X, Y, Z, pemodelan bentuk dasar ekstrusi, dan pengaturan skala ruang.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_25.html" class="meeting-badge">Pertemuan 10</a></span>
+                        <h4>Texturing & Rendering 3D</h4>
+                        <p>Pemberian material objek (kayu, kaca, logam) dan proses rendering visual realistis.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_26.html" class="meeting-badge">Pertemuan 11</a></span>
+                        <h4>AI Image Generation (Midjourney/Bing)</h4>
+                        <p>Etika penggunaan AI, penulisan Prompt Engineering, dan integrasi aset generator AI.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian 4 -->
+            <div class="phase-section">
+                <h3 class="phase-title">Bagian 4: Proyek Akhir Terintegrasi & Pameran</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <span><a href="pertemuan_27.html" class="meeting-badge">Pertemuan 12</a></span>
+                        <h4>Brief Kampanye Visual Terintegrasi</h4>
+                        <p>Merancang proyek akhir lintas software (Vektor, Raster, InDesign, 3D untuk pameran).</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_28.html" class="meeting-badge">Pertemuan 13</a></span>
+                        <h4>Studio Eksekusi Proyek Akhir</h4>
+                        <p>Pengerjaan praktikum lintas perangkat lunak di bawah bimbingan intensif guru.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_29.html" class="meeting-badge">Pertemuan 14</a></span>
+                        <h4>Finishing Portofolio Digital</h4>
+                        <p>Penyusunan studi kasus portofolio profesional format PDF / Behance.</p>
+                    </div>
+                    <div class="card">
+                        <span><a href="pertemuan_30.html" class="meeting-badge">Pertemuan 15</a></span>
+                        <h4>Sidang Karya & Pameran Terbuka</h4>
+                        <p>Presentasi proyek multi-software, demonstrasi karya, dan evaluasi pencapaian tahunan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MA Plus Sunan Giri • Modul Peminatan IT Desain Grafis</p>
+    </footer>
+
+    <!-- Script JavaScript Dual-Theme & Tab Switcher -->
+    <script>
+        // Fungsi Tombol Ganti Tema (Dual-Theme)
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const btn = document.getElementById('themeToggleBtn');
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'light');
+                btn.textContent = '🌙 Mode Gelap';
+            } else {
+                htmlEl.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ Mode Terang';
+            }
+        }
+
+        // Fungsi Switch Semester Tabs
+        function switchSemester(semesterNum) {
+            const sem1El = document.getElementById('semester-1');
+            const sem2El = document.getElementById('semester-2');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            if (semesterNum === 1) {
+                sem1El.classList.add('active-semester');
+                sem2El.classList.remove('active-semester');
+                buttons[0].classList.add('active');
+            } else {
+                sem2El.classList.add('active-semester');
+                sem1El.classList.remove('active-semester');
+                buttons[1].classList.add('active');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

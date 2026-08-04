@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 3: Pen Tool Mastery & Vektorisasi (Tracing) - MA Plus Sunan Giri</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS Terpisah -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigasi Modul (Home, Kembali, Tema, Lanjut) -->
+    <nav class="sticky-nav">
+        <div class="nav-container lesson-nav">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <!-- Tombol Ikon Rumah ke Index -->
+                <a href="index.html" class="nav-btn-link home-icon-btn" title="Kembali ke Beranda Silabus">
+                    🏠
+                </a>
+                <a href="pertemuan_2.html" class="nav-btn-link">&larr; Sebelumnya</a>
+            </div>
+
+            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Ganti Tema">
+                ☀️ Mode Terang
+            </button>
+
+            <a href="pertemuan_4.html" class="nav-btn-link primary-link">Selanjutnya &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- Header Materi: Gaya Kartu dan Ikon -->
+    <header class="content-container" style="margin-top: 1.5rem; margin-bottom: 0;">
+        <div class="header-card-style">
+            <div class="header-icon-box">✒️</div>
+            <div class="header-text-box">
+                <span class="meeting-badge-large">Pertemuan 3 • Semester 1</span>
+                <h1>Pen Tool Mastery: Menundukkan Garis Kurva & Vektorisasi Presisi</h1>
+                <p>MA Plus Sunan Giri • Mata Pelajaran Peminatan IT (Desain Grafis)</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Utama Materi -->
+    <main class="content-container">
+
+        <!-- Quotes Penyemangat -->
+        <div class="card quote-card" style="margin-bottom: 2.5rem; border-left: 4px solid #10b981; background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), transparent);">
+            <p style="font-style: italic; font-size: 0.95rem; color: var(--text-color);">
+                "Pen Tool itu seperti mengendarai motor kopling: awalnya bikin stres dan sering mati mesin, tapi kalau sudah terbiasa, kamu bisa melibas tikungan bentuk apa pun dengan mulus!" 🏍️✨
+            </p>
+        </div>
+
+        <!-- Tujuan Pembelajaran -->
+        <section class="phase-section">
+            <h3 class="phase-title">🎯 Tujuan Pembelajaran</h3>
+            <div class="cards-grid-single">
+                <div class="card">
+                    <h4>Capaian Kompetensi</h4>
+                    <ul class="lesson-list">
+                        <li>✒️ Menguasai logika dasar pembuatan titik (*Node*) dan garis tangen (*Handle Curves*) menggunakan **Pen Tool**.</li>
+                        <li>🎯 Melatih kelenturan tangan menggambar bentuk organik yang tidak bisa dibuat dengan kotak/lingkaran biasa.</li>
+                        <li>🔄 Menguasai teknik <em>Tracing</em> (mengubah sketsa tangan atau gambar bitmap buram menjadi vektor presisi).</li>
+                        <li>🔍 Menguji logika kurva dan titik node melalui tantangan interaktif <em>Zona Detektif Visual</em>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 1 -->
+        <section class="phase-section">
+            <h3 class="phase-title">1. Mengenal Anatomi Pen Tool (Node & Tangent Handle)</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon-title">📍 <h4>Titik Node & Segmen Garis</h4></div>
+                    <p>Setiap garis vektor dibentuk oleh titik-titik jangkar (*Node*). Klik tunggal menghasilkan garis lurus, sementara klik dan geser (*drag*) menghasilkan garis lengkung dengan bantuan gagang kurva (*Handle*).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon-title">✂️ <h4>Menghapus & Mengubah Node</h4></div>
+                    <p>Gunakan <strong>Shape Tool (F10)</strong> untuk menggeser letak titik node, memotong garis, atau mengubah kurva melengkung menjadi sudut lancip (*cusp*).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 2: TEKNIK TRACING -->
+        <section class="phase-section">
+            <h3 class="phase-title">2. Seni Vektorisasi: Teknik Tracing Profesional</h3>
+            <p style="margin-bottom: 1.25rem; color: var(--text-muted); font-size: 0.9rem;">
+                *Tracing* adalah proses menjiplak gambar bitmap (foto mentah, sketsa pensil di kertas, atau logo buram) menggunakan Pen Tool di atas lembar kerja CorelDRAW agar menjadi aset vektor yang tajam.
+            </p>
+
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="card">
+                    <div class="card-icon-title">📌 <h4>Langkah 1: Lock Bitmap</h4></div>
+                    <p>Impor gambar referensi ke lembar kerja, lalu klik kanan pilih <strong>Lock</strong> agar gambar tidak bergeser saat kita menjiplak di atasnya.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon-title">✒️ <h4>Langkah 2: Path Building</h4></div>
+                    <p>Mulai buat garis luar (*outline*) menggunakan Pen Tool dengan jumlah titik node sesedikit mungkin agar garis tetap mulus (*smooth*).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon-title">🎨 <h4>Langkah 3: Coloring & Refining</h4></div>
+                    <p>Berikan warna isian (*fill*), rapikan sudut kurva yang kurang pas menggunakan Shape Tool, dan hapus gambar referensi di bawahnya.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ZONA DETEKTIF VISUAL ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🕵️‍♂️ Mode Tantangan: Zona Detektif Visual</h3>
+            <div class="card detective-card-container" style="border-color: #8b5cf6;">
+                <h4>Uji Analisis Pen Tool & Titik Node!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Analisis studi kasus seputar penggunaan kurva dan titik node di bawah ini, lalu tentukan tindakan yang paling tepat.</p>
+
+                <div id="detective-challenge-container">
+                    <!-- Kasus Detektif Visual dirender dinamis via JS -->
+                </div>
+                <div id="detective-feedback" class="quiz-feedback-msg" style="display: none; margin-top: 1rem;"></div>
+            </div>
+        </section>
+
+        <!-- ================= KUIS INTERAKTIF: KUIS SENGGOL BACOK ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🔥 Kuis Interaktif: "Kuis Senggol Bacok" (Pertemuan 3)</h3>
+            <div class="card quiz-card-container">
+                <h4>Uji Pemahaman Pen Tool & Tracing!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Pilih jawaban yang paling benar. Respon instan langsung muncul saat Anda mengklik pilihan.</p>
+                
+                <div id="quiz-container">
+                    <!-- Soal Kuis dirender dinamis via JavaScript -->
+                </div>
+
+                <div id="quiz-summary" class="quiz-result-box" style="display: none; margin-top: 1.5rem;">
+                    <h3>Skor Akhir Kuis Anda:</h3>
+                    <p id="summary-score-text"></p>
+                    <button class="tab-btn active" onclick="resetQuiz()" style="margin-top: 1rem;">Ulangi Kuis</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aktivitas Praktik / Tugas Kelas -->
+        <section class="phase-section">
+            <h3 class="phase-title">🛠️ Aktivitas Praktik Lab Komputer</h3>
+            <div class="cards-grid-single">
+                <div class="card action-card">
+                    <div class="card-icon-title">💻 <h4>Tantangan Tracing Sketsa Karakter / Logo</h4></div>
+                    <p>Siswa membuka aplikasi CorelDRAW dan menjalankan latihan berikut:</p>
+                    <ul class="lesson-list" style="margin-top: 0.5rem;">
+                        <li>1. Mengimpor gambar siluet hewan atau sketsa lambang pramuka beresolusi rendah ke CorelDRAW.</li>
+                        <li>2. Mengunci gambar (*Lock Object*) dan melakukan *tracing* menggunakan Pen Tool secara teliti.</li>
+                        <li>3. Memastikan kurva tersambung sempurna (*Closed Path*) agar dapat diberi warna padat.</li>
+                        <li>4. Menyimpan file tugas dengan format <code>pertemuan3_namasiswa.cdr</code>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MA Plus Sunan Giri • Modul Peminatan IT Desain Grafis</p>
+    </footer>
+
+    <!-- Script JavaScript: Dual-Theme, Zona Detektif Visual, & Kuis Real-Time -->
+    <script>
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const btn = document.getElementById('themeToggleBtn');
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'light');
+                btn.textContent = '🌙 Mode Gelap';
+            } else {
+                htmlEl.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ Mode Terang';
+            }
+        }
+
+        // Data Tantangan Zona Detektif Visual Pertemuan 3
+        const detectiveCase = {
+            caseTitle: "Kasus #03: Misteri Kurva Patah-Patah",
+            caseDesc: "Seorang siswa mencoba membuat garis lengkung menggunakan Pen Tool, namun setiap kali diklik, hasilnya selalu berupa garis lurus kaku yang patah-patah tanpa ada kelengkungan halus. Apa teknik yang terlewat oleh siswa tersebut?",
+            options: [
+                "Lupa menekan tombol F6 pada keyboard", 
+                "Hanya melakukan klik tunggal tanpa ditahan lalu digeser (drag) untuk memunculkan tangen kurva", 
+                "Harus menggunakan Shape Tool terlebih dahulu dari awal", 
+                "Format file dokumen belum diubah ke CMYK"
+            ],
+            answer: 1, 
+            explanation: "Tepat sekali Detektif! Untuk membuat kurva melengkung, pengguna wajib melakukan klik dan geser (drag) agar gagang kurva (*handle*) aktif, bukan sekadar klik tunggal."
+        };
+
+        function renderDetectiveGame() {
+            const container = document.getElementById('detective-challenge-container');
+            let buttonsHtml = '';
+            detectiveCase.options.forEach((opt, idx) => {
+                buttonsHtml += `<button class="quiz-choice-btn" id="det-opt-${idx}" onclick="checkDetective(${idx})">${opt}</button>`;
+            });
+
+            container.innerHTML = `
+                <div style="background: var(--bg-color); padding: 1rem; border-radius: 8px; border: 1px dashed var(--card-border);">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text-color);">${detectiveCase.caseTitle}</p>
+                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">${detectiveCase.caseDesc}</p>
+                    <div class="quiz-options-grid">${buttonsHtml}</div>
+                </div>
+            `;
+        }
+
+        function checkDetective(selectedIdx) {
+            const feedbackEl = document.getElementById('detective-feedback');
+            for (let i = 0; i < detectiveCase.options.length; i++) {
+                const btn = document.getElementById(`det-opt-${i}`);
+                btn.disabled = true;
+                if (i === detectiveCase.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedIdx) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedIdx === detectiveCase.answer) {
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Analisis Benar!</strong> ${detectiveCase.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> Jawaban yang benar adalah pilihan kedua. ${detectiveCase.explanation}`;
+            }
+            feedbackEl.style.display = 'block';
+        }
+
+        // Data 10 Soal Kuis Pertemuan 3 Pen Tool & Tracing
+        const quizData = [
+            {
+                question: "1. Apa nama alat (tool) di CorelDRAW yang digunakan untuk menggambar garis kurva dan jalur presisi secara bebas?",
+                options: ["Rectangle Tool", "Pen Tool", "Ellipse Tool", "Zoom Tool"],
+                answer: 1,
+                explanation: "Tepat! Pen Tool adalah senjata utama untuk menggambar kurva dan garis presisi."
+            },
+            {
+                question: "2. Apa istilah untuk titik jangkar yang menjadi fondasi penghubung antar garis vektor?",
+                options: ["Pixel", "Node", "Grid", "Anchor Fill"],
+                answer: 1,
+                explanation: "Benar! Titik jangkar tersebut dinamakan Node."
+            },
+            {
+                question: "3. Bagaimana cara menghasilkan garis lengkung (bukan garis lurus) saat menggunakan Pen Tool?",
+                options: ["Cukup klik sekali saja", "Klik dan geser (drag) untuk memunculkan gagang kurva/tangen", "Tekan tombol Delete", "Klik dua kali pada lembar kerja"],
+                answer: 1,
+                explanation: "Tepat! Klik dan geser (drag) akan membentuk handle kurva yang melengkung."
+            },
+            {
+                question: "4. Alat apa yang digunakan untuk mengedit letak titik node atau merubah bentuk kurva setelah garis selesai dibuat?",
+                options: ["Pick Tool", "Shape Tool (F10)", "Crop Tool", "Eraser Tool"],
+                answer: 1,
+                explanation: "Hebat! Shape Tool adalah alat untuk memodifikasi titik node dan kurva."
+            },
+            {
+                question: "5. Apa arti dari proses Tracing dalam dunia desain grafis?",
+                options: ["Menghapus latar belakang foto", "Menjiplak gambar bitmap/sketsa menjadi bentuk vektor presisi", "Mewarnai objek dengan gradasi", "Mengekspor file ke format PDF"],
+                answer: 1,
+                explanation: "Tepat! Tracing adalah proses menjiplak aset bitmap agar menjadi vektor."
+            },
+            {
+                question: "6. Mengapa gambar referensi bitmap perlu dikunci (Lock) sebelum melakukan tracing?",
+                options: ["Agar warnanya berubah otomatis", "Agar gambar tidak sengaja bergeser saat kita sedang menjiplak", "Agar ukuran filenya menjadi besar", "Agar formatnya berubah ke PDF"],
+                answer: 1,
+                explanation: "Benar! Mengunci objek mencegah gambar referensi bergeser posisinya."
+            },
+            {
+                question: "7. Agar sebuah objek vektor dapat diberi warna isian (Fill Color), syarat mutlak jalurnya harus...",
+                options: ["Terbuka (Open path)", "Tertutup rapat (Closed path)", "Berwarna hitam putih", "Dihapus nodenya"],
+                answer: 1,
+                explanation: "Tepat! Jalur garis harus tertutup rapat (Closed path) agar area warna tidak bocor."
+            },
+            {
+                question: "8. Apa fungsi dari gagang tangen (*handle*) pada titik node kurva?",
+                options: ["Mengatur besar kecilnya volume komputer", "Mengatur kemiringan dan tingkat kelengkungan kurva garis", "Menghapus objek secara permanen", "Mengunci lembar kerja"],
+                answer: 1,
+                explanation: "Benar! Handle tangen mengatur arah dan lengkungan kurva garis vektor."
+            },
+            {
+                question: "9. Dalam prinsip membuat kurva dengan Pen Tool yang baik, sebaiknya kita menggunakan...",
+                options: ["Titik node sebanyak-banyaknya di setiap milimeter", "Titik node sesedikit mungkin agar garis tetap mulus (smooth)", "Hanya garis lurus tanpa kurva", "Hanya menggunakan lingkaran"],
+                answer: 1,
+                explanation: "Tepat! Sedikit node membuat kurva lebih mulus dan file lebih ringan."
+            },
+            {
+                question: "10. Manakah shortcut tombol keyboard cepat untuk mengaktifkan Shape Tool di CorelDRAW?",
+                options: ["F4", "F6", "F10", "Ctrl + S"],
+                answer: 2,
+                explanation: "Hebat! F10 adalah shortcut standar untuk mengaktifkan Shape Tool."
+            }
+        ];
+
+        let answeredCount = 0;
+        let totalScore = 0;
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+            answeredCount = 0;
+            totalScore = 0;
+            document.getElementById('quiz-summary').style.display = 'none';
+
+            quizData.forEach((q, index) => {
+                let optionsHtml = '';
+                q.options.forEach((opt, optIndex) => {
+                    optionsHtml += `
+                        <button class="quiz-choice-btn" id="q${index}-opt${optIndex}" onclick="checkAnswer(${index}, ${optIndex})">
+                            ${opt}
+                        </button>
+                    `;
+                });
+
+                container.innerHTML += `
+                    <div class="quiz-question-box" id="q-box-${index}">
+                        <p class="quiz-q-title"><strong>${q.question}</strong></p>
+                        <div class="quiz-options-grid">${optionsHtml}</div>
+                        <div id="feedback-${index}" class="quiz-feedback-msg" style="display: none;"></div>
+                    </div>
+                `;
+            });
+        }
+
+        function checkAnswer(qIndex, selectedOpt) {
+            const qData = quizData[qIndex];
+            const feedbackEl = document.getElementById(`feedback-${qIndex}`);
+            const boxEl = document.getElementById(`q-box-${qIndex}`);
+            
+            for (let i = 0; i < qData.options.length; i++) {
+                const btn = document.getElementById(`q${qIndex}-opt${i}`);
+                btn.disabled = true;
+                if (i === qData.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedOpt) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedOpt === qData.answer) {
+                totalScore += 10;
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Benar!</strong> ${qData.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> ${qData.explanation}`;
+            }
+
+            feedbackEl.style.display = 'block';
+            boxEl.style.borderLeft = (selectedOpt === qData.answer) ? "4px solid #10b981" : "4px solid #ef4444";
+
+            answeredCount++;
+            if (answeredCount === quizData.length) {
+                showSummary();
+            }
+        }
+
+        function showSummary() {
+            const summaryBox = document.getElementById('quiz-summary');
+            const scoreText = document.getElementById('summary-score-text');
+            
+            let message = `Total Skor Anda: <strong>${totalScore} / 100</strong>. `;
+            if (totalScore >= 80) {
+                message += "🌟 Luar biasa! Jari dan pemahaman Pen Tool Anda sudah sangat handal.";
+            } else if (totalScore >= 60) {
+                message += "👍 Cukup baik, terus asah kelenturan tangan saat praktik di lab.";
+            } else {
+                message += "📚 Yuk baca kembali materi tentang node dan kurva agar semakin paham!";
+            }
+            
+            scoreText.innerHTML = message;
+            summaryBox.style.display = 'block';
+            window.scrollTo({ top: summaryBox.offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            renderQuiz();
+            window.scrollTo({ top: document.getElementById('quiz-container').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        window.onload = function() {
+            renderDetectiveGame();
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>

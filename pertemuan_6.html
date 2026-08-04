@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 6: Tipografi Kreatif & Efek Teks - MA Plus Sunan Giri</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS Terpisah -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigasi Modul (Home, Kembali, Tema, Lanjut) -->
+    <nav class="sticky-nav">
+        <div class="nav-container lesson-nav">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <a href="index.html" class="nav-btn-link home-icon-btn" title="Kembali ke Beranda Silabus">🏠</a>
+                <a href="pertemuan_5.html" class="nav-btn-link">&larr; Pertemuan 5</a>
+            </div>
+            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Ganti Tema">
+                ☀️ Mode Terang
+            </button>
+            <a href="pertemuan_7.html" class="nav-btn-link primary-link">Pertemuan 7 &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- Header Materi: Gaya Kartu dan Ikon -->
+    <header class="content-container" style="margin-top: 1.5rem; margin-bottom: 0;">
+        <div class="header-card-style">
+            <div class="header-icon-box">🔤</div>
+            <div class="header-text-box">
+                <span class="meeting-badge-large">Pertemuan 6 • Semester 1</span>
+                <h1>Tipografi Kreatif & Efek Teks (Text on Path & Artistic Text)</h1>
+                <p>MA Plus Sunan Giri • Mata Pelajaran Peminatan IT (Desain Grafis)</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Utama Materi -->
+    <main class="content-container">
+
+        <!-- Quotes Penyemangat -->
+        <div class="card quote-card" style="margin-bottom: 2.5rem; border-left: 4px solid #8b5cf6; background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), transparent);">
+            <p style="font-style: italic; font-size: 0.95rem; color: var(--text-color);">
+                "Huruf bukan cuma sekadar bacaan, huruf punya kepribadian. Font yang salah bisa membuat poster dakwah terlihat seperti undangan ulang tahun anak!" 🔤✨
+            </p>
+        </div>
+
+        <!-- Tujuan Pembelajaran -->
+        <section class="phase-section">
+            <h3 class="phase-title">🎯 Tujuan Pembelajaran</h3>
+            <div class="cards-grid-single">
+                <div class="card">
+                    <h4>Capaian Kompetensi</h4>
+                    <ul class="lesson-list">
+                        <li>🔤 Membedakan fungsi penggunaan **Artistic Text** (untuk judul/logo) dan **Paragraph Text** (untuk teks panjang).</li>
+                        <li>📏 Menguasai teknik pengaturan spasi huruf (*Kerning & Tracking*) agar tata letak teks terlihat rapi dan profesional.</li>
+                        <li>🌀 Memanfaatkan fitur canggih **Text on Path** untuk membuat teks melingkar mengikuti alur garis vektor (stiker/lencana).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 1 -->
+        <section class="phase-section">
+            <h3 class="phase-title">1. Artistic Text vs Paragraph Text</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon-title">✍️ <h4>Artistic Text</h4></div>
+                    <p>Dibuat dengan cara klik sekali di lembar kerja. Sangat fleksibel untuk teks pendek seperti judul, logo, atau kutipan (*quote*) karena ukurannya bisa ditarik sesuka hati tanpa batas kotak.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon-title">📰 <h4>Paragraph Text</h4></div>
+                    <p>Dibuat dengan cara mendesain kotak teks (*text box*). Digunakan khusus untuk blok teks yang panjang seperti isi artikel, deskripsi produk, atau paragraf majalah.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 2: KERNING, TRACKING & TEXT ON PATH -->
+        <section class="phase-section">
+            <h3 class="phase-title">2. Seni Mengatur Spasi Huruf & Fitur Text on Path</h3>
+            <p style="margin-bottom: 1.25rem; color: var(--text-muted); font-size: 0.9rem;">
+                Desain teks yang kaku akan terlihat amatiran. Pelajari teknik pengaturan jarak dan teknik menempelkan teks pada kurva garis.
+            </p>
+
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="card">
+                    <div class="card-icon-title" style="color: #3b82f6;">📏 <h4>Kerning & Tracking</h4></div>
+                    <p><strong>Kerning</strong> adalah pengaturan jarak antar dua huruf spesifik agar tidak terlihat renggang/sempit. <strong>Tracking</strong> adalah pengaturan jarak spasi untuk seluruh blok teks sekaligus.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1626544827763-d516dce335e2?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Tipografi">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon-title" style="color: #f59e0b;">🌀 <h4>Text on Path</h4></div>
+                    <p>Fitur untuk memasukkan teks agar berjalan mengikuti alur garis lengkung atau lingkaran. Sangat esensial dalam pembuatan lencana (*badge*), stempel, atau logo melingkar.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Text on Path">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon-title" style="color: #10b981;">✂️ <h4>Break Apart (Ctrl + K)</h4></div>
+                    <p>Perintah untuk memecah teks atau objek gabungan menjadi bagian-bagian terpisah agar setiap huruf atau objek bisa diedit secara mandiri.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Break Apart">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ZONA DETEKTIF VISUAL ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🕵️‍♂️ Mode Tantangan: Zona Detektif Visual</h3>
+            <div class="card detective-card-container" style="border-color: #8b5cf6;">
+                <h4>Uji Logika Penempatan Teks Melingkar!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Analisis studi kasus di bawah ini, lalu tentukan tindakan teknis yang paling tepat bagi seorang desainer.</p>
+
+                <div id="detective-challenge-container">
+                    <!-- Kasus Detektif Visual dirender dinamis via JS -->
+                </div>
+                <div id="detective-feedback" class="quiz-feedback-msg" style="display: none; margin-top: 1rem;"></div>
+            </div>
+        </section>
+
+        <!-- ================= KUIS INTERAKTIF: KUIS SENGGOL BACOK ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🔥 Kuis Interaktif: "Kuis Senggol Bacok" (Pertemuan 6)</h3>
+            <div class="card quiz-card-container">
+                <h4>Uji Pemahaman Tipografi & Efek Teks!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Pilih jawaban yang paling benar. Respon instan langsung muncul saat Anda mengklik pilihan.</p>
+                
+                <div id="quiz-container">
+                    <!-- Soal Kuis dirender dinamis via JavaScript -->
+                </div>
+
+                <div id="quiz-summary" class="quiz-result-box" style="display: none; margin-top: 1.5rem;">
+                    <h3>Skor Akhir Kuis Anda:</h3>
+                    <p id="summary-score-text"></p>
+                    <button class="tab-btn active" onclick="resetQuiz()" style="margin-top: 1rem;">Ulangi Kuis</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aktivitas Praktik / Tugas Kelas -->
+        <section class="phase-section">
+            <h3 class="phase-title">🛠️ Aktivitas Praktik Lab Komputer</h3>
+            <div class="cards-grid-single">
+                <div class="card action-card">
+                    <div class="card-icon-title">💻 <h4>Membuat Desain Stiker Lencana (*Badge*) Organisasi</h4></div>
+                    <p>Siswa membuka aplikasi CorelDRAW dan menjalankan latihan berikut:</p>
+                    <ul class="lesson-list" style="margin-top: 0.5rem;">
+                        <li>1. Membuat bentuk lingkaran dasar sebagai fondasi stiker.</li>
+                        <li>2. Menggunakan fitur <strong>Text on Path</strong> untuk menyematkan teks nama organisasi mengikuti lengkungan lingkaran atas dan bawah.</li>
+                        <li>3. Mengatur jarak huruf (*Tracking*) dan menyisipkan elemen vektor pendukung di tengah lencana.</li>
+                        <li>4. Menyimpan file tugas ke format <code>pertemuan6_namasiswa.cdr</code>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MA Plus Sunan Giri • Modul Peminatan IT Desain Grafis</p>
+    </footer>
+
+    <!-- Script JavaScript: Dual-Theme, Zona Detektif Visual, & Kuis Real-Time -->
+    <script>
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const btn = document.getElementById('themeToggleBtn');
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'light');
+                btn.textContent = '🌙 Mode Gelap';
+            } else {
+                htmlEl.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ Mode Terang';
+            }
+        }
+
+        // Data Tantangan Zona Detektif Visual Pertemuan 6
+        const detectiveCase = {
+            caseTitle: "Kasus #06: Misteri Teks Terbalik di Bawah Lingkaran",
+            caseDesc: "Seorang siswa menggunakan fitur Text on Path untuk membuat teks melingkar pada stiker lencana. Teks di bagian atas melengkung dengan benar, namun saat teks ditempatkan di bagian bawah lingkaran, posisi hurufnya malah terbalik kepala di bawah. Apa fitur atau tombol yang harus ia gunakan untuk memperbaikinya?",
+            options: [
+                "Menghapus teks dan mengetik ulang dari kanan", 
+                "Menggunakan tombol 'Mirror Text' di Property Bar untuk membalik arah teks secara horizontal dan vertikal", 
+                "Mengganti jenis font menjadi Arial", 
+                "Menggunakan Shape Tool untuk menghapus node lingkaran"
+            ],
+            answer: 1, 
+            explanation: "Tepat sekali Detektif! Tombol pengaturan **Mirror Text** di Property Bar adalah penyelamat utama untuk membalik posisi teks melingkar bawah agar kembali tegak terbaca."
+        };
+
+        function renderDetectiveGame() {
+            const container = document.getElementById('detective-challenge-container');
+            let buttonsHtml = '';
+            detectiveCase.options.forEach((opt, idx) => {
+                buttonsHtml += `<button class="quiz-choice-btn" id="det-opt-${idx}" onclick="checkDetective(${idx})">${opt}</button>`;
+            });
+
+            container.innerHTML = `
+                <div style="background: var(--bg-color); padding: 1rem; border-radius: 8px; border: 1px dashed var(--card-border);">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text-color);">${detectiveCase.caseTitle}</p>
+                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">${detectiveCase.caseDesc}</p>
+                    <div class="quiz-options-grid">${buttonsHtml}</div>
+                </div>
+            `;
+        }
+
+        function checkDetective(selectedIdx) {
+            const feedbackEl = document.getElementById('detective-feedback');
+            for (let i = 0; i < detectiveCase.options.length; i++) {
+                const btn = document.getElementById(`det-opt-${i}`);
+                btn.disabled = true;
+                if (i === detectiveCase.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedIdx) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedIdx === detectiveCase.answer) {
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Analisis Benar!</strong> ${detectiveCase.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> Jawaban yang benar adalah pilihan kedua. ${detectiveCase.explanation}`;
+            }
+            feedbackEl.style.display = 'block';
+        }
+
+        // Data 10 Soal Kuis Pertemuan 6 Tipografi
+        const quizData = [
+            {
+                question: "1. Apa jenis teks di CorelDRAW yang dibuat dengan klik sekali di lembar kerja dan sangat ideal untuk judul atau logo?",
+                options: ["Paragraph Text", "Artistic Text", "Bitmap Text", "HTML Text"],
+                answer: 1,
+                explanation: "Tepat! Artistic Text sangat fleksibel untuk teks pendek dan judul."
+            },
+            {
+                question: "2. Jenis teks apa yang dibuat menggunakan kotak teks (text box) dan ideal untuk paragraf atau artikel panjang?",
+                options: ["Artistic Text", "Paragraph Text", "Vector Text", "Curve Text"],
+                answer: 1,
+                explanation: "Benar! Paragraph Text dirancang khusus untuk menampung blok teks panjang."
+            },
+            {
+                question: "3. Apa nama fitur di CorelDRAW yang berfungsi untuk menempatkan teks agar berjalan mengikuti alur garis kurva atau lingkaran?",
+                options: ["PowerClip", "Text on Path", "Drop Shadow", "Mesh Fill"],
+                answer: 1,
+                explanation: "Tepat! Text on Path menempelkan teks melingkar atau mengikuti kurva."
+            },
+            {
+                question: "4. Apa perbedaan utama antara Kerning dan Tracking dalam tipografi?",
+                options: ["Tidak ada bedanya", "Kerning mengatur spasi antara dua huruf spesifik, Tracking mengatur spasi seluruh blok teks", "Tracking hanya untuk huruf kapital", "Kerning khusus untuk paragraf"],
+                answer: 1,
+                explanation: "Hebat! Kerning untuk spasi spesifik antar dua huruf, sedangkan tracking untuk keseluruhan."
+            },
+            {
+                question: "5. Apa fungsi dari perintah Break Apart (Ctrl + K) pada objek teks di CorelDRAW?",
+                options: ["Menghapus teks", "Memecah kalimat atau objek gabungan menjadi bagian huruf terpisah", "Mengubah teks menjadi bitmap", "Menyimpan file secara otomatis"],
+                answer: 1,
+                explanation: "Tepat! Break Apart memisahkan kesatuan teks menjadi huruf independen."
+            },
+            {
+                question: "6. Manakah shortcut keyboard cepat untuk mengaktifkan teks tool (*Text Tool*) di CorelDRAW?",
+                options: ["Tombol F8", "Tombol F6", "Tombol F10", "Tombol Ctrl + T"],
+                answer: 0,
+                explanation: "Benar! F8 adalah shortcut standar untuk mengaktifkan Text Tool."
+            },
+            {
+                question: "7. Mengapa pengaturan spasi huruf (*tracking/kerning*) yang buruk dapat merusak hasil desain?",
+                options: ["Membuat file menjadi sangat berat", "Membuat teks sulit dibaca (*readability* buruk) dan terkesan tidak profesional", "Membuat warna teks berubah menjadi merah", "Membuat komputer restart sendiri"],
+                answer: 1,
+                explanation: "Tepat! Spasi huruf yang berantakan mengurangi estetika dan kenyamanan baca."
+            },
+            {
+                question: "8. Dalam pembuatan stempel atau lencana sekolah berbentuk lingkaran, fitur apa yang wajib dikuasai?",
+                options: ["Extrude", "Text on Path", "Contour", "Perspective"],
+                answer: 1,
+                explanation: "Betul! Text on Path adalah kunci utama membuat tulisan melingkar pada lencana."
+            },
+            {
+                question: "9. Apa yang terjadi jika kita mengubah Artistic Text menjadi Paragraph Text di CorelDRAW?",
+                options: ["Teks terhapus otomatis", "Teks akan terbungkus ke dalam bingkai kotak teks (*text box*)", "Teks berubah menjadi kurva vektor murni", "Warna huruf berubah menjadi putih"],
+                answer: 1,
+                explanation: "Tepat! Teks akan menyesuaikan diri masuk ke dalam batas kotak paragraf."
+            },
+            {
+                question: "10. Apa keuntungan memilih jenis font (*typeface*) yang tepat pada desain poster?",
+                options: ["Menyampaikan karakter dan suasana pesan (misal: formal, santai, atau tegas) secara instan", "Membuat ukuran file CorelDRAW membengkak", "Mengurangi jumlah warna poster", "Mempercepat proses cetak di mesin"],
+                answer: 0,
+                explanation: "Benar! Pemilihan font yang tepat membangun emosi dan karakter pesan visual."
+            }
+        ];
+
+        let answeredCount = 0;
+        let totalScore = 0;
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+            answeredCount = 0;
+            totalScore = 0;
+            document.getElementById('quiz-summary').style.display = 'none';
+
+            quizData.forEach((q, index) => {
+                let optionsHtml = '';
+                q.options.forEach((opt, optIndex) => {
+                    optionsHtml += `
+                        <button class="quiz-choice-btn" id="q${index}-opt${optIndex}" onclick="checkAnswer(${index}, ${optIndex})">
+                            ${opt}
+                        </button>
+                    `;
+                });
+
+                container.innerHTML += `
+                    <div class="quiz-question-box" id="q-box-${index}">
+                        <p class="quiz-q-title"><strong>${q.question}</strong></p>
+                        <div class="quiz-options-grid">${optionsHtml}</div>
+                        <div id="feedback-${index}" class="quiz-feedback-msg" style="display: none;"></div>
+                    </div>
+                `;
+            });
+        }
+
+        function checkAnswer(qIndex, selectedOpt) {
+            const qData = quizData[qIndex];
+            const feedbackEl = document.getElementById(`feedback-${qIndex}`);
+            const boxEl = document.getElementById(`q-box-${qIndex}`);
+            
+            for (let i = 0; i < qData.options.length; i++) {
+                const btn = document.getElementById(`q${qIndex}-opt${i}`);
+                btn.disabled = true;
+                if (i === qData.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedOpt) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedOpt === qData.answer) {
+                totalScore += 10;
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Benar!</strong> ${qData.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> ${qData.explanation}`;
+            }
+
+            feedbackEl.style.display = 'block';
+            boxEl.style.borderLeft = (selectedOpt === qData.answer) ? "4px solid #10b981" : "4px solid #ef4444";
+
+            answeredCount++;
+            if (answeredCount === quizData.length) {
+                showSummary();
+            }
+        }
+
+        function showSummary() {
+            const summaryBox = document.getElementById('quiz-summary');
+            const scoreText = document.getElementById('summary-score-text');
+            
+            let message = `Total Skor Anda: <strong>${totalScore} / 100</strong>. `;
+            if (totalScore >= 80) {
+                message += "🌟 Luar biasa! Penguasaan tipografi dan efek teks Anda sudah sangat profesional.";
+            } else if (totalScore >= 60) {
+                message += "👍 Bagus, terus asah keahlian menata teks dan lencana Anda.";
+            } else {
+                message += "📚 Yuk baca kembali ringkasan materi tipografi di atas!";
+            }
+            
+            scoreText.innerHTML = message;
+            summaryBox.style.display = 'block';
+            window.scrollTo({ top: summaryBox.offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            renderQuiz();
+            window.scrollTo({ top: document.getElementById('quiz-container').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        window.onload = function() {
+            renderDetectiveGame();
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>

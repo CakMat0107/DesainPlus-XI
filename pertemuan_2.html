@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 2: Navigasi CorelDRAW & Shape Operations - MA Plus Sunan Giri</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS Terpisah -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigasi Modul (Home, Kembali, Tema, Lanjut) -->
+    <nav class="sticky-nav">
+        <div class="nav-container lesson-nav">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <!-- Tombol Ikon Rumah ke Index -->
+                <a href="index.html" class="nav-btn-link home-icon-btn" title="Kembali ke Beranda Silabus">
+                    🏠
+                </a>
+                <a href="pertemuan_1.html" class="nav-btn-link">&larr; Sebelumnya</a>
+            </div>
+
+            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Ganti Tema">
+                ☀️ Mode Terang
+            </button>
+
+            <a href="pertemuan_3.html" class="nav-btn-link primary-link">Selanjutnya &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- Header Materi: Gaya Kartu dan Ikon -->
+    <header class="content-container" style="margin-top: 1.5rem; margin-bottom: 0;">
+        <div class="header-card-style">
+            <div class="header-icon-box">📐</div>
+            <div class="header-text-box">
+                <span class="meeting-badge-large">Pertemuan 2 • Semester 1</span>
+                <h1>Navigasi CorelDRAW & Manipulasi Bentuk Dasar (Weld, Trim, Intersect)</h1>
+                <p>MA Plus Sunan Giri • Mata Pelajaran Peminatan IT (Desain Grafis)</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Utama Materi -->
+    <main class="content-container">
+
+        <!-- Quotes Penyemangat -->
+        <div class="card quote-card" style="margin-bottom: 2.5rem; border-left: 4px solid #3b82f6; background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), transparent);">
+            <p style="font-style: italic; font-size: 0.95rem; color: var(--text-color);">
+                "Master desain tidak lahir dari shortcut keyboard yang canggih, melainkan dari kebiasaan menguasai fondasi bentuk dasar dengan presisi." 🖱️✨
+            </p>
+        </div>
+
+        <!-- Tujuan Pembelajaran -->
+        <section class="phase-section">
+            <h3 class="phase-title">🎯 Tujuan Pembelajaran</h3>
+            <div class="cards-grid-single">
+                <div class="card">
+                    <h4>Capaian Kompetensi</h4>
+                    <ul class="lesson-list">
+                        <li>🖥️ Mengenal tata letak antarmuka (*Interface*) dan manajemen lembar kerja di CorelDRAW.</li>
+                        <li>⚙️ Memahami fungsi dasar pembuatan objek geometri (*Rectangle, Ellipse, Polygon*).</li>
+                        <li>✂️ Menguasai teknik manipulasi bentuk menggunakan ilustrasi visual <strong>Weld, Trim, dan Intersect</strong>.</li>
+                        <li>🔍 Menguji ketajaman logika bentuk melalui tantangan interaktif <em>Zona Detektif Visual</em>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 1 -->
+        <section class="phase-section">
+            <h3 class="phase-title">1. Mengenal Antarmuka (Interface) CorelDRAW</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon-title">🖥️ <h4>Workspace & Toolbox</h4></div>
+                    <p>Area kerja utama yang bersih. Sisi kiri terdapat <strong>Toolbox</strong> (alat gambar utama seperti Pick Tool, Shape Tool, Rectangle, dll), dan sisi kanan terdapat *Color Palette*.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon-title">📏 <h4>Property Bar & Docker</h4></div>
+                    <p>Bagian atas otomatis berubah fungsinya tergantung alat yang sedang Anda pilih (*Property Bar*), sementara panel samping (*Docker*) membantu pengaturan tingkat lanjut.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 2: SHAPE OPERATIONS DENGAN ILUSTRASI GAMBAR -->
+        <section class="phase-section">
+            <h3 class="phase-title">2. Senjata Utama Vektor: Weld, Trim, & Intersect (Disertai Ilustrasi)</h3>
+            <p style="margin-bottom: 1.25rem; color: var(--text-muted); font-size: 0.9rem;">
+                Perhatikan ilustrasi visual di bawah ini untuk melihat bagaimana bentuk geometri dasar digabung dan dipotong menjadi objek baru yang unik.
+            </p>
+
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <!-- Weld -->
+                <div class="card">
+                    <div class="card-icon-title" style="color: #3b82f6;">🔗 <h4>Weld (Menyatukan)</h4></div>
+                    <p>Menggabungkan dua atau lebih objek bersentuhan/tumpang tindih menjadi satu objek tunggal tanpa garis batas tengah.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Weld CorelDRAW">
+                    </div>
+                    <p style="margin-top: 0.75rem; font-size: 0.8rem; color: #3b82f6;"><strong>Contoh:</strong> Menggabungkan kotak dan lingkaran untuk membuat siluet logo objek kustom.</p>
+                </div>
+
+                <!-- Trim -->
+                <div class="card">
+                    <div class="card-icon-title" style="color: #f59e0b;">✂️ <h4>Trim (Memotong)</h4></div>
+                    <p>Menggunakan objek terdepan sebagai "pisau" untuk memotong objek di belakangnya secara presisi.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Trim CorelDRAW">
+                    </div>
+                    <p style="margin-top: 0.75rem; font-size: 0.8rem; color: #f59e0b;"><strong>Contoh:</strong> Melubangi bentuk geometri atau membuat potongan efek lengkung tajam.</p>
+                </div>
+
+                <!-- Intersect -->
+                <div class="card">
+                    <div class="card-icon-title" style="color: #10b981;">🎯 <h4>Intersect (Irisan)</h4></div>
+                    <p>Menghasilkan objek baru dari area perpotongan (irisan) antara dua objek yang saling tumpang tindih.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Intersect CorelDRAW">
+                    </div>
+                    <p style="margin-top: 0.75rem; font-size: 0.8rem; color: #10b981;"><strong>Contoh:</strong> Membentuk objek lengkung bulan sabit atau pola simetris yang kompleks.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ZONA DETEKTIF VISUAL ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🕵️‍♂️ Mode Tantangan: Zona Detektif Visual</h3>
+            <div class="card detective-card-container" style="border-color: #8b5cf6;">
+                <h4>Uji Logika Potongan Objek Vektor!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Analisis studi kasus bentuk geometri di bawah ini, lalu tentukan fungsi perintah *Shaping* apa yang digunakan untuk menghasilkan bentuk akhir tersebut.</p>
+
+                <div id="detective-challenge-container">
+                    <!-- Kasus Detektif Visual dirender dinamis via JS -->
+                </div>
+                <div id="detective-feedback" class="quiz-feedback-msg" style="display: none; margin-top: 1rem;"></div>
+            </div>
+        </section>
+
+        <!-- ================= KUIS INTERAKTIF: KUIS SENGGOL BACOK ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🔥 Kuis Interaktif: "Kuis Senggol Bacok" (Pertemuan 2)</h3>
+            <div class="card quiz-card-container">
+                <h4>Uji Pemahaman Dasar CorelDRAW!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Pilih jawaban yang paling benar. Respon instan langsung muncul saat Anda mengklik pilihan.</p>
+                
+                <div id="quiz-container">
+                    <!-- Soal Kuis dirender dinamis via JavaScript -->
+                </div>
+
+                <div id="quiz-summary" class="quiz-result-box" style="display: none; margin-top: 1.5rem;">
+                    <h3>Skor Akhir Kuis Anda:</h3>
+                    <p id="summary-score-text"></p>
+                    <button class="tab-btn active" onclick="resetQuiz()" style="margin-top: 1rem;">Ulangi Kuis</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aktivitas Praktik / Tugas Kelas -->
+        <section class="phase-section">
+            <h3 class="phase-title">🛠️ Aktivitas Praktik Lab Komputer</h3>
+            <div class="cards-grid-single">
+                <div class="card action-card">
+                    <div class="card-icon-title">💻 <h4>Membuat Ikon Flat Sederhana via Weld & Trim</h4></div>
+                    <p>Siswa membuka aplikasi CorelDRAW di komputer masing-masing dan melakukan latihan:</p>
+                    <ul class="lesson-list" style="margin-top: 0.5rem;">
+                        <li>1. Membuat objek perisai (*Shield*) menggunakan kombinasi kotak, segitiga, dan fungsi <strong>Weld</strong>.</li>
+                        <li>2. Membuat ikon bendera atau logo korporat sederhana menggunakan fungsi <strong>Trim</strong> dan <strong>Intersect</strong>.</li>
+                        <li>3. Menyimpan lembar kerja ke format file <code>.cdr</code> di folder tugas masing-masing.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MA Plus Sunan Giri • Modul Peminatan IT Desain Grafis</p>
+    </footer>
+
+    <!-- Script JavaScript: Dual-Theme, Zona Detektif Visual, & Kuis Real-Time -->
+    <script>
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const btn = document.getElementById('themeToggleBtn');
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'light');
+                btn.textContent = '🌙 Mode Gelap';
+            } else {
+                htmlEl.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ Mode Terang';
+            }
+        }
+
+        // Data Tantangan Zona Detektif Visual
+        const detectiveCase = {
+            caseTitle: "Kasus #01: Misteri Cincin Lubang Sempurna",
+            caseDesc: "Seorang desainer ingin melubangi sebuah lingkaran besar tepat di tengahnya menggunakan lingkaran kecil di depan. Perintah shaping apa yang dia gunakan?",
+            options: ["Weld", "Trim", "Intersect"],
+            answer: 1, // Trim
+            explanation: "Tepat sekali Detektif! Perintah **Trim** menggunakan objek depan sebagai pisau untuk melubangi objek belakang."
+        };
+
+        function renderDetectiveGame() {
+            const container = document.getElementById('detective-challenge-container');
+            let buttonsHtml = '';
+            detectiveCase.options.forEach((opt, idx) => {
+                buttonsHtml += `<button class="quiz-choice-btn" id="det-opt-${idx}" onclick="checkDetective(${idx})">${opt}</button>`;
+            });
+
+            container.innerHTML = `
+                <div style="background: var(--bg-color); padding: 1rem; border-radius: 8px; border: 1px dashed var(--card-border);">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text-color);">${detectiveCase.caseTitle}</p>
+                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">${detectiveCase.caseDesc}</p>
+                    <div class="quiz-options-grid">${buttonsHtml}</div>
+                </div>
+            `;
+        }
+
+        function checkDetective(selectedIdx) {
+            const feedbackEl = document.getElementById('detective-feedback');
+            for (let i = 0; i < detectiveCase.options.length; i++) {
+                const btn = document.getElementById(`det-opt-${i}`);
+                btn.disabled = true;
+                if (i === detectiveCase.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedIdx) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedIdx === detectiveCase.answer) {
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Analisis Benar!</strong> ${detectiveCase.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> Jawaban yang benar adalah <strong>${detectiveCase.options[detectiveCase.answer]}</strong>. ${detectiveCase.explanation}`;
+            }
+            feedbackEl.style.display = 'block';
+        }
+
+        // Data 10 Soal Kuis Pertemuan 2 CorelDRAW
+        const quizData = [
+            {
+                question: "1. Perangkat lunak apa yang menjadi fokus utama pembelajaran desain vektor di Semester 1?",
+                options: ["Adobe Photoshop", "CorelDRAW", "Microsoft Word", "Blender 3D"],
+                answer: 1,
+                explanation: "Tepat! CorelDRAW adalah software utama kita di semester 1 untuk mendesain berbasis vektor."
+            },
+            {
+                question: "2. Di manakah letak tombol alat bantu gambar utama (seperti kotak, lingkaran, pick tool) di CorelDRAW?",
+                options: ["Di dalam Color Palette", "Di Toolbox sebelah kiri layar", "Di menu bar paling bawah", "Di dalam folder Windows"],
+                answer: 1,
+                explanation: "Benar! Toolbox terletak di sebelah kiri area kerja utama."
+            },
+            {
+                question: "3. Apa fungsi dari fitur Weld pada operasi bentuk (Shaping) CorelDRAW?",
+                options: ["Memotong objek belakang", "Menyatukan dua atau lebih objek tumpang tindih menjadi satu kesatuan", "Menghasilkan area irisan saja", "Membuat objek menjadi transparan"],
+                answer: 1,
+                explanation: "Tepat! Weld menyatukan objek bersentuhan menjadi satu bentuk utuh."
+            },
+            {
+                question: "4. Fitur shaping mana yang digunakan untuk memotong objek di belakang menggunakan objek yang berada di depan?",
+                options: ["Weld", "Trim", "Intersect", "Simplify"],
+                answer: 1,
+                explanation: "Benar! Trim berfungsi layaknya pisau pemotong berbasis objek depan."
+            },
+            {
+                question: "5. Apa hasil akhir jika kita menerapkan fungsi Intersect pada dua objek yang saling beririsan?",
+                options: ["Objek digabung total", "Objek dihapus semua", "Terbentuk objek baru khusus dari area perpotongan kedua objek", "Objek berubah menjadi bitmap"],
+                answer: 2,
+                explanation: "Hebat! Intersect mengambil area irisannya saja menjadi objek baru."
+            },
+            {
+                question: "6. Apa nama alat (tool) di CorelDRAW yang digunakan untuk menyeleksi atau memindahkan objek?",
+                options: ["Shape Tool", "Pick Tool", "Zoom Tool", "Crop Tool"],
+                answer: 1,
+                explanation: "Tepat! Pick Tool adalah alat dasar untuk memilih, menggeser, dan mengubah ukuran objek."
+            },
+            {
+                question: "7. Format ekstensi file bawaan standar saat menyimpan dokumen di CorelDRAW adalah...",
+                options: [".psd", ".ai", ".cdr", ".docx"],
+                answer: 2,
+                explanation: "Benar! Format standar CorelDRAW adalah .cdr."
+            },
+            {
+                question: "8. Untuk membuat bentuk geometri persegi panjang (Rectangle) dengan cepat, tombol apa yang dapat ditekan pada Toolbox?",
+                options: ["Tombol M", "Tombol F6", "Tombol C", "Tombol R"],
+                answer: 1,
+                explanation: "Tepat! Shortcut F6 digunakan untuk langsung mengaktifkan Rectangle Tool."
+            },
+            {
+                question: "9. Manakah fungsi shortcut tombol F4 di dalam lembar kerja CorelDRAW?",
+                options: ["Menutup aplikasi", "Melihat seluruh objek aktif di lembar kerja secara pas (*Zoom to All Objects*)", "Menyimpan file", "Menghapus objek terpilih"],
+                answer: 1,
+                explanation: "Benar! F4 berfungsi melakukan zoom otomatis agar seluruh objek terlihat di layar."
+            },
+            {
+                question: "10. Jika kita ingin membuat bentuk bulan sabit menggunakan dua lingkaran yang bergeser, operasi shaping mana yang paling tepat?",
+                options: ["Weld", "Trim", "Smooth", "Distort"],
+                answer: 1,
+                explanation: "Tepat! Trim digunakan untuk memotong bagian lingkaran utama dengan lingkaran penengahnya."
+            }
+        ];
+
+        let answeredCount = 0;
+        let totalScore = 0;
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+            answeredCount = 0;
+            totalScore = 0;
+            document.getElementById('quiz-summary').style.display = 'none';
+
+            quizData.forEach((q, index) => {
+                let optionsHtml = '';
+                q.options.forEach((opt, optIndex) => {
+                    optionsHtml += `
+                        <button class="quiz-choice-btn" id="q${index}-opt${optIndex}" onclick="checkAnswer(${index}, ${optIndex})">
+                            ${opt}
+                        </button>
+                    `;
+                });
+
+                container.innerHTML += `
+                    <div class="quiz-question-box" id="q-box-${index}">
+                        <p class="quiz-q-title"><strong>${q.question}</strong></p>
+                        <div class="quiz-options-grid">${optionsHtml}</div>
+                        <div id="feedback-${index}" class="quiz-feedback-msg" style="display: none;"></div>
+                    </div>
+                `;
+            });
+        }
+
+        function checkAnswer(qIndex, selectedOpt) {
+            const qData = quizData[qIndex];
+            const feedbackEl = document.getElementById(`feedback-${qIndex}`);
+            const boxEl = document.getElementById(`q-box-${qIndex}`);
+            
+            for (let i = 0; i < qData.options.length; i++) {
+                const btn = document.getElementById(`q${qIndex}-opt${i}`);
+                btn.disabled = true;
+                if (i === qData.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedOpt) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedOpt === qData.answer) {
+                totalScore += 10;
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Benar!</strong> ${qData.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> ${qData.explanation}`;
+            }
+
+            feedbackEl.style.display = 'block';
+            boxEl.style.borderLeft = (selectedOpt === qData.answer) ? "4px solid #10b981" : "4px solid #ef4444";
+
+            answeredCount++;
+            if (answeredCount === quizData.length) {
+                showSummary();
+            }
+        }
+
+        function showSummary() {
+            const summaryBox = document.getElementById('quiz-summary');
+            const scoreText = document.getElementById('summary-score-text');
+            
+            let message = `Total Skor Anda: <strong>${totalScore} / 100</strong>. `;
+            if (totalScore >= 80) {
+                message += "🌟 Luar biasa! Anda sangat siap mengoperasikan CorelDRAW.";
+            } else if (totalScore >= 60) {
+                message += "👍 Bagus, pertahankan dan terus latih kelenturan tangan Anda di lab.";
+            } else {
+                message += "📚 Yuk ulangi baca materi operasi shaping di atas agar makin mahir!";
+            }
+            
+            scoreText.innerHTML = message;
+            summaryBox.style.display = 'block';
+            window.scrollTo({ top: summaryBox.offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            renderQuiz();
+            window.scrollTo({ top: document.getElementById('quiz-container').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        window.onload = function() {
+            renderDetectiveGame();
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>

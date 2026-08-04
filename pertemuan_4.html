@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 4: Manipulasi Objek Lanjutan & Pathfinding - MA Plus Sunan Giri</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS Terpisah -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigasi Modul (Home, Kembali, Tema, Lanjut) -->
+    <nav class="sticky-nav">
+        <div class="nav-container lesson-nav">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <!-- Tombol Ikon Rumah ke Index -->
+                <a href="index.html" class="nav-btn-link home-icon-btn" title="Kembali ke Beranda Silabus">
+                    🏠
+                </a>
+                <a href="pertemuan_3.html" class="nav-btn-link">&larr; Sebelumnya</a>
+            </div>
+
+            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Ganti Tema">
+                ☀️ Mode Terang
+            </button>
+
+            <a href="pertemuan_5.html" class="nav-btn-link primary-link">Selanjutnya &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- Header Materi: Gaya Kartu dan Ikon -->
+    <header class="content-container" style="margin-top: 1.5rem; margin-bottom: 0;">
+        <div class="header-card-style">
+            <div class="header-icon-box">🧩</div>
+            <div class="header-text-box">
+                <span class="meeting-badge-large">Pertemuan 4 • Semester 1</span>
+                <h1>Manipulasi Objek Tingkat Lanjut (Shape Tool & Pathfinding Lanjutan)</h1>
+                <p>MA Plus Sunan Giri • Mata Pelajaran Peminatan IT (Desain Grafis)</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Utama Materi -->
+    <main class="content-container">
+
+        <!-- Quotes Penyemangat -->
+        <div class="card quote-card" style="margin-bottom: 2.5rem; border-left: 4px solid #3b82f6; background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), transparent);">
+            <p style="font-style: italic; font-size: 0.95rem; color: var(--text-color);">
+                "Desain vektor yang kompleks sebenarnya cuma kumpulan bentuk sederhana yang di-mix, di-trim, dan di-combine dengan kesabaran tingkat dewa." 🧩✨
+            </p>
+        </div>
+
+        <!-- Tujuan Pembelajaran -->
+        <section class="phase-section">
+            <h3 class="phase-title">🎯 Tujuan Pembelajaran</h3>
+            <div class="cards-grid-single">
+                <div class="card">
+                    <h4>Capaian Kompetensi</h4>
+                    <ul class="lesson-list">
+                        <li>🧩 Menguasai manipulasi titik (*Node*) secara mendalam menggunakan **Shape Tool (F10)**.</li>
+                        <li>⚙️ Memahami fungsi lanjutan *Shaping* / *Pathfinding* seperti **Simplify, Front Minus Back, dan Back Minus Front**.</li>
+                        <li>🎨 Mengonversi bentuk geometri biasa menjadi ilustrasi karakter datar (*flat vector illustration*) atau ikon kustom yang menarik.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 1 -->
+        <section class="phase-section">
+            <h3 class="phase-title">1. Penguasaan Mendalam Shape Tool (F10)</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon-title">📍 <h4>Convert to Curves (Ctrl + Q)</h4></div>
+                    <p>Sebelum memodifikasi sudut bentuk geometri (seperti kotak atau lingkaran) dengan Shape Tool, objek wajib diubah dulu menjadi kurva bebas menggunakan perintah *Convert to Curves*.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon-title">📐 <h4>Add / Delete & Curve Convert</h4></div>
+                    <p>Anda bisa menambahkan titik node baru di tengah garis, menghapus node yang tidak perlu, atau mengubah garis lurus menjadi melengkung (*Curve*) secara instan melalui *Property Bar*.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 2: PATHFINDING / SHAPING LANJUTAN -->
+        <section class="phase-section">
+            <h3 class="phase-title">2. Senjata Lanjutan: Simplify, Front Minus Back, & Back Minus Front</h3>
+            <p style="margin-bottom: 1.25rem; color: var(--text-muted); font-size: 0.9rem;">
+                Selain Weld dan Trim, CorelDRAW menyediakan fungsi pemotongan tingkat lanjut untuk mempercepat proses pembuatan karya ilustrasi vektor.
+            </p>
+
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="card">
+                    <div class="card-icon-title" style="color: #3b82f6;">⚡ <h4>Simplify</h4></div>
+                    <p>Secara otomatis memotong area objek yang saling tumpang tindih tanpa harus pusing memikirkan urutan objek depan atau belakang.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Simplify">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon-title" style="color: #f59e0b;">🔻 <h4>Front Minus Back</h4></div>
+                    <p>Memotong objek bagian depan menggunakan bentuk objek yang ada di belakangnya. Hasil akhirnya adalah menyisakan sisa potongan depan.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Front Minus Back">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon-title" style="color: #10b981;">🔺 <h4>Back Minus Front</h4></div>
+                    <p>Kebalikan dari Front Minus Back: Objek belakang dipotong oleh objek yang ada di bagian depan.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Back Minus Front">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ZONA DETEKTIF VISUAL ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🕵️‍♂️ Mode Tantangan: Zona Detektif Visual</h3>
+            <div class="card detective-card-container" style="border-color: #8b5cf6;">
+                <h4>Uji Logika Operasi Pathfinding Lanjutan!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Analisis studi kasus pemotongan objek di bawah ini, lalu tentukan fungsi perintah *Shaping* yang paling tepat.</p>
+
+                <div id="detective-challenge-container">
+                    <!-- Kasus Detektif Visual dirender dinamis via JS -->
+                </div>
+                <div id="detective-feedback" class="quiz-feedback-msg" style="display: none; margin-top: 1rem;"></div>
+            </div>
+        </section>
+
+        <!-- ================= KUIS INTERAKTIF: KUIS SENGGOL BACOK ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🔥 Kuis Interaktif: "Kuis Senggol Bacok" (Pertemuan 4)</h3>
+            <div class="card quiz-card-container">
+                <h4>Uji Pemahaman Manipulasi Objek & Pathfinding!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Pilih jawaban yang paling benar. Respon instan langsung muncul saat Anda mengklik pilihan.</p>
+                
+                <div id="quiz-container">
+                    <!-- Soal Kuis dirender dinamis via JavaScript -->
+                </div>
+
+                <div id="quiz-summary" class="quiz-result-box" style="display: none; margin-top: 1.5rem;">
+                    <h3>Skor Akhir Kuis Anda:</h3>
+                    <p id="summary-score-text"></p>
+                    <button class="tab-btn active" onclick="resetQuiz()" style="margin-top: 1rem;">Ulangi Kuis</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aktivitas Praktik / Tugas Kelas -->
+        <section class="phase-section">
+            <h3 class="phase-title">🛠️ Aktivitas Praktik Lab Komputer</h3>
+            <div class="cards-grid-single">
+                <div class="card action-card">
+                    <div class="card-icon-title">💻 <h4>Membuat Ilustrasi Karakter Datar (*Flat Vector*) Sederhana</h4></div>
+                    <p>Siswa membuka aplikasi CorelDRAW dan menjalankan latihan berikut:</p>
+                    <ul class="lesson-list" style="margin-top: 0.5rem;">
+                        <li>1. Menggunakan Shape Tool (F10) untuk memodifikasi sudut kotak menjadi bentuk badan karakter robot atau hewan lucu.</li>
+                        <li>2. Memanfaatkan fungsi <em>Front Minus Back</em> atau <em>Simplify</em> untuk melubangi atau memotong elemen aksesoris karakter.</li>
+                        <li>3. Menyimpan hasil karya latihan ke dalam format <code>pertemuan4_namasiswa.cdr</code>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MA Plus Sunan Giri • Modul Peminatan IT Desain Grafis</p>
+    </footer>
+
+    <!-- Script JavaScript: Dual-Theme, Zona Detektif Visual, & Kuis Real-Time -->
+    <script>
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const btn = document.getElementById('themeToggleBtn');
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'light');
+                btn.textContent = '🌙 Mode Gelap';
+            } else {
+                htmlEl.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ Mode Terang';
+            }
+        }
+
+        // Data Tantangan Zona Detektif Visual Pertemuan 4
+        const detectiveCase = {
+            caseTitle: "Kasus #04: Misteri Pemotongan Objek Terbalik",
+            caseDesc: "Seorang siswa ingin memotong bentuk objek dasar di bagian belakang menggunakan bentuk bintang yang posisinya berada di lapisan paling depan. Perintah shaping manakah yang harus ia pilih agar objek belakang terpotong sesuai bentuk bintang?",
+            options: ["Weld", "Front Minus Back", "Back Minus Front", "Intersect"],
+            answer: 2, // Back Minus Front
+            explanation: "Tepat sekali Detektif! Perintah **Back Minus Front** memotong objek belakang (Back) menggunakan objek yang ada di depan (Front)."
+        };
+
+        function renderDetectiveGame() {
+            const container = document.getElementById('detective-challenge-container');
+            let buttonsHtml = '';
+            detectiveCase.options.forEach((opt, idx) => {
+                buttonsHtml += `<button class="quiz-choice-btn" id="det-opt-${idx}" onclick="checkDetective(${idx})">${opt}</button>`;
+            });
+
+            container.innerHTML = `
+                <div style="background: var(--bg-color); padding: 1rem; border-radius: 8px; border: 1px dashed var(--card-border);">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text-color);">${detectiveCase.caseTitle}</p>
+                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">${detectiveCase.caseDesc}</p>
+                    <div class="quiz-options-grid">${buttonsHtml}</div>
+                </div>
+            `;
+        }
+
+        function checkDetective(selectedIdx) {
+            const feedbackEl = document.getElementById('detective-feedback');
+            for (let i = 0; i < detectiveCase.options.length; i++) {
+                const btn = document.getElementById(`det-opt-${i}`);
+                btn.disabled = true;
+                if (i === detectiveCase.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedIdx) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedIdx === detectiveCase.answer) {
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Analisis Benar!</strong> ${detectiveCase.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> Jawaban yang benar adalah <strong>${detectiveCase.options[detectiveCase.answer]}</strong>. ${detectiveCase.explanation}`;
+            }
+            feedbackEl.style.display = 'block';
+        }
+
+        // Data 10 Soal Kuis Pertemuan 4 CorelDRAW
+        const quizData = [
+            {
+                question: "1. Apa perintah wajib yang harus dilakukan pada objek geometri (seperti Rectangle) sebelum dapat diedit titik nodenya menggunakan Shape Tool?",
+                options: ["Group Objects (Ctrl + G)", "Convert to Curves (Ctrl + Q)", "Lock Object", "Export to JPG"],
+                answer: 1,
+                explanation: "Tepat! Objek harus di-Convert to Curves terlebih dahulu agar node geometrinya bisa dimodifikasi bebas."
+            },
+            {
+                question: "2. Apa fungsi utama dari Shape Tool (F10) saat digunakan pada objek kurva vektor?",
+                options: ["Mewarnai latar belakang", "Memanipulasi, menggeser, dan mengubah bentuk titik node serta kurva", "Memperbesar ukuran kanvas", "Menghapus file secara permanen"],
+                answer: 1,
+                explanation: "Benar! Shape Tool adalah alat utama untuk mengedit titik node dan lengkungan garis."
+            },
+            {
+                question: "3. Perintah shaping apa yang memotong objek belakang menggunakan objek depan, tetapi tetap menyisakan objek depannya?",
+                options: ["Trim", "Front Minus Back", "Back Minus Front", "Weld"],
+                answer: 1,
+                explanation: "Tepat! Front Minus Back memotong objek belakang dan menyisakan bentuk objek depannya."
+            },
+            {
+                question: "4. Apa fungsi dari perintah shaping Simplify di CorelDRAW?",
+                options: ["Mengubah file menjadi hitam putih", "Memotong area objek yang saling tumpang tindih secara otomatis tanpa pusing urutan layer", "Menghapus semua warna", "Membuat objek menjadi 3D"],
+                answer: 1,
+                explanation: "Hebat! Simplify menyederhanakan pemotongan objek bertumpuk secara otomatis."
+            },
+            {
+                question: "5. Manakah shortcut keyboard standar untuk perintah Convert to Curves di CorelDRAW?",
+                options: ["Ctrl + C", "Ctrl + V", "Ctrl + Q", "Ctrl + S"],
+                answer: 2,
+                explanation: "Tepat! Ctrl + Q adalah shortcut cepat untuk Convert to Curves."
+            },
+            {
+                question: "6. Jika kita ingin menambahkan titik node baru pada sebuah garis kurva, apa yang bisa dilakukan?",
+                options: ["Klik dua kali pada garis menggunakan Shape Tool", "Tekan tombol F6", "Tutup aplikasi CorelDRAW", "Ganti warna outline"],
+                answer: 0,
+                explanation: "Benar! Klik dua kali pada garis dengan Shape Tool akan menambahkan node baru."
+            },
+            {
+                question: "7. Apa hasil dari operasi Back Minus Front?",
+                options: ["Objek depan memotong objek belakang", "Objek belakang memotong objek depan", "Kedua objek disatukan total", "Objek diduplikasi menjadi dua"],
+                answer: 0,
+                explanation: "Tepat! Objek belakang dipotong oleh objek yang ada di depan."
+            },
+            {
+                question: "8. Dalam pembuatan ilustrasi karakter datar (*flat vector*), mengapa manipulasi node sangat diandalkan?",
+                options: ["Agar file menjadi sangat berat", "Untuk membentuk lekukan tubuh, rambut, atau aksesoris kustom secara presisi", "Agar gambar berubah menjadi bitmap", "Agar warna otomatis menjadi gradasi"],
+                answer: 1,
+                explanation: "Betul! Modifikasi node memungkinkan pembuatan bentuk organik yang unik dan kustom."
+            },
+            {
+                question: "9. Di manakah biasanya panel atau menu shortcut untuk mengakses perintah Shaping (Weld, Trim, Intersect, Simplify)?",
+                options: ["Di dalam menu File > Print", "Di Property Bar saat dua objek atau lebih diseleksi bersamaan", "Di dalam Recycle Bin", "Di Taskbar Windows"],
+                answer: 1,
+                explanation: "Tepat! Tombol fungsi shaping muncul otomatis di Property Bar ketika objek terseleksi."
+            },
+            {
+                question: "10. Apa keuntungan utama mendesain ilustrasi menggunakan kombinasi bentuk dasar dan Shape Tool dibanding menggambar bebas tanpa arah?",
+                options: ["Bentuk jauh lebih rapi, proporsional, dan mudah diedit ulang", "Prosesnya memakan waktu 3 hari", "Hasil akhirnya pasti pecah", "Tidak memerlukan komputer"],
+                answer: 0,
+                explanation: "Benar! Membangun dari bentuk dasar membuat hasil desain jauh lebih rapi dan presisi."
+            }
+        ];
+
+        let answeredCount = 0;
+        let totalScore = 0;
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+            answeredCount = 0;
+            totalScore = 0;
+            document.getElementById('quiz-summary').style.display = 'none';
+
+            quizData.forEach((q, index) => {
+                let optionsHtml = '';
+                q.options.forEach((opt, optIndex) => {
+                    optionsHtml += `
+                        <button class="quiz-choice-btn" id="q${index}-opt${optIndex}" onclick="checkAnswer(${index}, ${optIndex})">
+                            ${opt}
+                        </button>
+                    `;
+                });
+
+                container.innerHTML += `
+                    <div class="quiz-question-box" id="q-box-${index}">
+                        <p class="quiz-q-title"><strong>${q.question}</strong></p>
+                        <div class="quiz-options-grid">${optionsHtml}</div>
+                        <div id="feedback-${index}" class="quiz-feedback-msg" style="display: none;"></div>
+                    </div>
+                `;
+            });
+        }
+
+        function checkAnswer(qIndex, selectedOpt) {
+            const qData = quizData[qIndex];
+            const feedbackEl = document.getElementById(`feedback-${qIndex}`);
+            const boxEl = document.getElementById(`q-box-${qIndex}`);
+            
+            for (let i = 0; i < qData.options.length; i++) {
+                const btn = document.getElementById(`q${qIndex}-opt${i}`);
+                btn.disabled = true;
+                if (i === qData.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedOpt) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedOpt === qData.answer) {
+                totalScore += 10;
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Benar!</strong> ${qData.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> ${qData.explanation}`;
+            }
+
+            feedbackEl.style.display = 'block';
+            boxEl.style.borderLeft = (selectedOpt === qData.answer) ? "4px solid #10b981" : "4px solid #ef4444";
+
+            answeredCount++;
+            if (answeredCount === quizData.length) {
+                showSummary();
+            }
+        }
+
+        function showSummary() {
+            const summaryBox = document.getElementById('quiz-summary');
+            const scoreText = document.getElementById('summary-score-text');
+            
+            let message = `Total Skor Anda: <strong>${totalScore} / 100</strong>. `;
+            if (totalScore >= 80) {
+                message += "🌟 Luar biasa! Penguasaan Shape Tool dan Pathfinding Anda sudah sangat matang.";
+            } else if (totalScore >= 60) {
+                message += "👍 Bagus, terus tingkatkan ketelitian dalam mengedit titik node.";
+            } else {
+                message += "📚 Yuk baca kembali ringkasan materi di atas agar semakin paham!";
+            }
+            
+            scoreText.innerHTML = message;
+            summaryBox.style.display = 'block';
+            window.scrollTo({ top: summaryBox.offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            renderQuiz();
+            window.scrollTo({ top: document.getElementById('quiz-container').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        window.onload = function() {
+            renderDetectiveGame();
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>

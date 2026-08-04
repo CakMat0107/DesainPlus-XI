@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 10: Desain Kemasan Produk (Packaging) - MA Plus Sunan Giri</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS Terpisah -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigasi Modul (Home, Kembali, Tema, Lanjut) -->
+    <nav class="sticky-nav">
+        <div class="nav-container lesson-nav">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <a href="index.html" class="nav-btn-link home-icon-btn" title="Kembali ke Beranda Silabus">🏠</a>
+                <a href="pertemuan_9.html" class="nav-btn-link">&larr; Pertemuan 9</a>
+            </div>
+            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Ganti Tema">
+                ☀️ Mode Terang
+            </button>
+            <a href="pertemuan_11.html" class="nav-btn-link primary-link">Pertemuan 11 &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- Header Materi: Gaya Kartu dan Ikon -->
+    <header class="content-container" style="margin-top: 1.5rem; margin-bottom: 0;">
+        <div class="header-card-style">
+            <div class="header-icon-box">📦</div>
+            <div class="header-text-box">
+                <span class="meeting-badge-large">Pertemuan 10 • Semester 1</span>
+                <h1>Desain Kemasan Produk (Packaging Label & Jaring-Jaring)</h1>
+                <p>MA Plus Sunan Giri • Mata Pelajaran Peminatan IT (Desain Grafis)</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Utama Materi -->
+    <main class="content-container">
+
+        <!-- Quotes Penyemangat -->
+        <div class="card quote-card" style="margin-bottom: 2.5rem; border-left: 4px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), transparent);">
+            <p style="font-style: italic; font-size: 0.95rem; color: var(--text-color);">
+                "Produk yang biasa saja bisa laku keras di pasaran jika dibungkus dengan desain kemasan yang memukau. Mata pembeli pertama kali jatuh pada bungkusnya!" 📦✨
+            </p>
+        </div>
+
+        <!-- Tujuan Pembelajaran -->
+        <section class="phase-section">
+            <h3 class="phase-title">🎯 Tujuan Pembelajaran</h3>
+            <div class="cards-grid-single">
+                <div class="card">
+                    <h4>Capaian Kompetensi</h4>
+                    <ul class="lesson-list">
+                        <li>📦 Memahami konsep dasar perancangan desain kemasan produk (*Packaging*) baik label stiker maupun jaring-jaring kotak.</li>
+                        <li>✂️ Mengenal perbedaan penting antara garis potong (*cut line*) dan garis lipat (*fold line*) pada pola kemasan.</li>
+                        <li>🏷️ Mengetahui elemen informasi wajib yang harus ada pada label produk (merek, komposisi, netto, kontak produsen).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 1 -->
+        <section class="phase-section">
+            <h3 class="phase-title">1. Anatomi Desain Kemasan: Garis Potong & Lipat</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon-title">✂️ <h4>Garis Potong (Cut Line) & Lipat (Fold Line)</h4></div>
+                    <p>Garis potong adalah batas luar pisau mesin/cutter untuk membentuk pola kemasan, sedangkan garis lipat adalah panduan garis putus-putus tempat kotak ditekuk secara rapi.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon-title">🏷️ <h4>Informasi Wajib pada Label Produk</h4></div>
+                    <p>Desain kemasan komersial tidak boleh asal indah. Produk wajib memuat nama produk/merek, komposisi bahan, berat/isi bersih (netto), tanggal kedaluwarsa, serta kontak produsen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 2: KEMASAN LABEL & JARING-JARING -->
+        <section class="phase-section">
+            <h3 class="phase-title">2. Jenis Kemasan: Stiker Label Produk vs Jaring-Jaring Kotak</h3>
+            <p style="margin-bottom: 1.25rem; color: var(--text-muted); font-size: 0.9rem;">
+                Dalam dunia wirausaha, desain kemasan dibagi menjadi dua pendekatan utama di CorelDRAW:
+            </p>
+
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="card">
+                    <div class="card-icon-title" style="color: #3b82f6;">🏷️ <h4>Stiker Label Botol / Toples</h4></div>
+                    <p>Desain grafis 2D datar berbentuk persegi panjang atau lingkaran yang dicetak di atas bahan stiker vinyl/chromo untuk ditempelkan pada kemasan botol atau mika siap pakai.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1626544827763-d516dce335e2?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Label Stiker">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon-title" style="color: #f59e0b;">📦 <h4>Jaring-Jaring Kotak (*Box Net*)</h4></div>
+                    <p>Pola jaring-jaring karton lembaran datar yang dirancang sedemikian rupa agar saat dilipat dan dilem membentuk kotak kemasan produk tiga dimensi yang utuh.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Jaring Kotak">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon-title" style="color: #10b981;">🎨 <h4>Tata Letak Muka Kemasan</h4></div>
+                    <p>Memastikan bagian depan (*front panel*) kemasan memuat informasi paling menarik agar langsung mencuri perhatian pembeli saat dipajang di rak toko.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Muka Kemasan">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ZONA DETEKTIF VISUAL ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🕵️‍♂️ Mode Tantangan: Zona Detektif Visual</h3>
+            <div class="card detective-card-container" style="border-color: #8b5cf6;">
+                <h4>Uji Logika Desain Kemasan Produk!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Analisis studi kasus di bawah ini, lalu tentukan tindakan teknis yang paling tepat bagi seorang desainer kemasan.</p>
+
+                <div id="detective-challenge-container">
+                    <!-- Kasus Detektif Visual dirender dinamis via JS -->
+                </div>
+                <div id="detective-feedback" class="quiz-feedback-msg" style="display: none; margin-top: 1rem;"></div>
+            </div>
+        </section>
+
+        <!-- ================= KUIS INTERAKTIF: KUIS SENGGOL BACOK ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🔥 Kuis Interaktif: "Kuis Senggol Bacok" (Pertemuan 10)</h3>
+            <div class="card quiz-card-container">
+                <h4>Uji Pemahaman Desain Kemasan (Packaging)!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Pilih jawaban yang paling benar. Respon instan langsung muncul saat Anda mengklik pilihan.</p>
+                
+                <div id="quiz-container">
+                    <!-- Soal Kuis dirender dinamis via JavaScript -->
+                </div>
+
+                <div id="quiz-summary" class="quiz-result-box" style="display: none; margin-top: 1.5rem;">
+                    <h3>Skor Akhir Kuis Anda:</h3>
+                    <p id="summary-score-text"></p>
+                    <button class="tab-btn active" onclick="resetQuiz()" style="margin-top: 1rem;">Ulangi Kuis</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aktivitas Praktik / Tugas Kelas -->
+        <section class="phase-section">
+            <h3 class="phase-title">🛠️ Aktivitas Praktik Lab Komputer</h3>
+            <div class="cards-grid-single">
+                <div class="card action-card">
+                    <div class="card-icon-title">💻 <h4>Mendesain Label Kemasan Produk Wirausaha Siswa</h4></div>
+                    <p>Siswa membuka aplikasi CorelDRAW dan menjalankan latihan berikut:</p>
+                    <ul class="lesson-list" style="margin-top: 0.5rem;">
+                        <li>1. Menentukan jenis produk wirausaha (misal: jajanan lokal atau minuman kemasan botol).</li>
+                        <li>2. Membuat desain label stiker berukuran kustom yang memuat nama merek, komposisi, netto, dan logo halal/kontak.</li>
+                        <li>3. Mengatur tata letak muka kemasan (*front panel*) agar estetis dan komunikatif.</li>
+                        <li>4. Menyimpan file tugas ke format <code>pertemuan10_namasiswa.cdr</code>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MA Plus Sunan Giri • Modul Peminatan IT Desain Grafis</p>
+    </footer>
+
+    <!-- Script JavaScript: Dual-Theme, Zona Detektif Visual, & Kuis Real-Time -->
+    <script>
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const btn = document.getElementById('themeToggleBtn');
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'light');
+                btn.textContent = '🌙 Mode Gelap';
+            } else {
+                htmlEl.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ Mode Terang';
+            }
+        }
+
+        // Data Tantangan Zona Detektif Visual Pertemuan 10
+        const detectiveCase = {
+            caseTitle: "Kasus #10: Misteri Informasi Tertutup Lipatan Kotak",
+            caseDesc: "Seorang siswa merancang jaring-jaring kotak kemasan produk makanan. Namun, saat kotak tersebut dicetak, dilipat, dan dilem, teks komposisi bahan penting malah berada di bagian dasar bawah kotak yang tersembunyi. Apa kesalahan fatal dalam perencanaan tata letak kemasan tersebut?",
+            options: [
+                "Mode warna dokumen menggunakan RGB", 
+                "Gagal memperhitungkan garis lipat (*fold line*) dan posisi panel muka kemasan saat lembaran datar ditekuk menjadi 3D", 
+                "Menggunakan jenis font Artistic Text yang terlalu besar", 
+                "Lupa mengunci gambar referensi bitmap"
+            ],
+            answer: 1, 
+            explanation: "Tepat sekali Detektif! Dalam mendesain kemasan jaring-jaring 3D, desainer wajib memperhitungkan simulasi lipatan fisik agar teks informasi tidak jatuh di garis lipatan atau bagian bawah kemasan."
+        };
+
+        function renderDetectiveGame() {
+            const container = document.getElementById('detective-challenge-container');
+            let buttonsHtml = '';
+            detectiveCase.options.forEach((opt, idx) => {
+                buttonsHtml += `<button class="quiz-choice-btn" id="det-opt-${idx}" onclick="checkDetective(${idx})">${opt}</button>`;
+            });
+
+            container.innerHTML = `
+                <div style="background: var(--bg-color); padding: 1rem; border-radius: 8px; border: 1px dashed var(--card-border);">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text-color);">${detectiveCase.caseTitle}</p>
+                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">${detectiveCase.caseDesc}</p>
+                    <div class="quiz-options-grid">${buttonsHtml}</div>
+                </div>
+            `;
+        }
+
+        function checkDetective(selectedIdx) {
+            const feedbackEl = document.getElementById('detective-feedback');
+            for (let i = 0; i < detectiveCase.options.length; i++) {
+                const btn = document.getElementById(`det-opt-${i}`);
+                btn.disabled = true;
+                if (i === detectiveCase.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedIdx) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedIdx === detectiveCase.answer) {
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Analisis Benar!</strong> ${detectiveCase.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> Jawaban yang benar adalah pilihan kedua. ${detectiveCase.explanation}`;
+            }
+            feedbackEl.style.display = 'block';
+        }
+
+        // Data 10 Soal Kuis Pertemuan 10 Kemasan Produk
+        const quizData = [
+            {
+                question: "1. Apa fungsi dari garis potong (*cut line*) pada pola jaring-jaring kemasan produk?",
+                options: ["Sebagai batas garis tempat mesin memotong lembaran kemasan", "Sebagai jalur teks berjalan", "Sebagai patokan warna gradasi", "Sebagai pengganti logo"],
+                answer: 0,
+                explanation: "Tepat! Cut line adalah panduan batas potong pisau fisik."
+            },
+            {
+                question: "2. Informasi wajib apa yang mutlak harus dicantumkan pada label kemasan produk makanan komersial?",
+                options: ["Nama pembuat game online", "Nama produk/merek, komposisi, netto, dan kontak produsen", "Biaya pembuatan desain grafis", "Sejarah berdirinya sekolah"],
+                answer: 1,
+                explanation: "Benar! Informasi produk wajib transparan bagi konsumen."
+            },
+            {
+                question: "3. Apa perbedaan utama antara stiker label kemasan 2D dan jaring-jaring kotak (*box net*) 3D?",
+                options: ["Tidak ada bedanya", "Stiker label ditempel pada wadah jadi, sedangkan jaring-jaring kotak dirancang dari lembaran datar untuk dibentuk menjadi wadah", "Jaring-jaring kotak hanya bisa dibuat di Photoshop", "Stiker label tidak boleh berwarna"],
+                answer: 1,
+                explanation: "Tepat! Stiker menempel di wadah, sementara jaring kotak membentuk wadahnya."
+            },
+            {
+                question: "4. Mengapa bagian muka kemasan (*front panel*) sangat penting mendapat perhatian visual tertinggi?",
+                options: ["Karena bagian tersebut yang pertama kali dilihat oleh calon pembeli di rak toko", "Karena bagian belakang tidak penting", "Karena wajib diberi warna hitam polos", "Karena ukurannya paling kecil"],
+                answer: 0,
+                explanation: "Hebat! Front panel adalah etalase utama penarik minat beli."
+            },
+            {
+                question: "5. Apa risiko jika seorang desainer salah memperhitungkan garis lipat (*fold line*) pada kemasan kotak?",
+                options: ["File CorelDRAW tidak bisa disimpan", "Teks informasi penting bisa terlipat di bagian sudut atau tertutup lem", "Komputer menjadi lambat", "Warna tinta otomatis terhapus"],
+                answer: 1,
+                explanation: "Tepat! Kesalahan perhitungan lipatan membuat informasi penting pada kemasan cacat baca."
+            },
+            {
+                question: "6. Manakah perangkat lunak vektor yang sangat andal untuk merancang tata letak dan garis potong kemasan produk?",
+                options: ["CorelDRAW", "Microsoft Calculator", "Notepad", "Windows Media Player"],
+                answer: 0,
+                explanation: "Benar! CorelDRAW sangat presisi dalam menangani ukuran milimeter untuk pola cetak kemasan."
+            },
+            {
+                question: "7. Apa arti dari istilah Netto pada label kemasan produk makanan?",
+                options: ["Berat kotor beserta wadahnya", "Berat atau isi bersih produk di dalam kemasan", "Harga jual produk di pasaran", "Tanggal kedaluwarsa makanan"],
+                answer: 1,
+                explanation: "Tepat! Netto menyatakan isi bersih produk."
+            },
+            {
+                question: "8. Dalam pembuatan kemasan, mengapa pemilihan warna dan kontras pada brand sangat penting?",
+                options: ["Agar produk mudah dikenali dan menonjol di antara produk pesaing di rak toko", "Agar printer tidak kehabisan tinta", "Agar file berukuran kecil", "Agar desainnya terlihat menyeramkan"],
+                answer: 0,
+                explanation: "Betul! Daya tarik visual membantu produk unggul dalam persaingan pasar."
+            },
+            {
+                question: "9. Apa tahap yang disarankan sebelum lembaran desain jaring-jaring kotak massal dicetak dan dipotong?",
+                options: ["Langsung dicetak ribuan lembar tanpa dicek", "Membuat model tiruan fisik (*mockup*) sederhana dengan melipat kertas cetak uji coba", "Menghapus semua teks", "Mematikan lampu ruangan"],
+                answer: 1,
+                explanation: "Tepat! Membuat mockup fisik uji coba mencegah kesalahan fatal cetak massal."
+            },
+            {
+                question: "10. Apa keuntungan mendesain kemasan produk sendiri bagi siswa peminatan IT Desain Grafis?",
+                options: ["Melatih jiwa kewirausahaan (*entrepreneurship*) dan kemampuan mengemas produk secara profesional", "Menghabiskan waktu luang di sekolah", "Membuat komputer cepat rusak", "Tidak ada manfaatnya"],
+                answer: 0,
+                explanation: "Benar! Keterampilan desain kemasan langsung membuka peluang wirausaha nyata bagi siswa."
+            }
+        ];
+
+        let answeredCount = 0;
+        let totalScore = 0;
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+            answeredCount = 0;
+            totalScore = 0;
+            document.getElementById('quiz-summary').style.display = 'none';
+
+            quizData.forEach((q, index) => {
+                let optionsHtml = '';
+                q.options.forEach((opt, optIndex) => {
+                    optionsHtml += `
+                        <button class="quiz-choice-btn" id="q${index}-opt${optIndex}" onclick="checkAnswer(${index}, ${optIndex})">
+                            ${opt}
+                        </button>
+                    `;
+                });
+
+                container.innerHTML += `
+                    <div class="quiz-question-box" id="q-box-${index}">
+                        <p class="quiz-q-title"><strong>${q.question}</strong></p>
+                        <div class="quiz-options-grid">${optionsHtml}</div>
+                        <div id="feedback-${index}" class="quiz-feedback-msg" style="display: none;"></div>
+                    </div>
+                `;
+            });
+        }
+
+        function checkAnswer(qIndex, selectedOpt) {
+            const qData = quizData[qIndex];
+            const feedbackEl = document.getElementById(`feedback-${qIndex}`);
+            const boxEl = document.getElementById(`q-box-${qIndex}`);
+            
+            for (let i = 0; i < qData.options.length; i++) {
+                const btn = document.getElementById(`q${qIndex}-opt${i}`);
+                btn.disabled = true;
+                if (i === qData.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedOpt) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedOpt === qData.answer) {
+                totalScore += 10;
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Benar!</strong> ${qData.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> ${qData.explanation}`;
+            }
+
+            feedbackEl.style.display = 'block';
+            boxEl.style.borderLeft = (selectedOpt === qData.answer) ? "4px solid #10b981" : "4px solid #ef4444";
+
+            answeredCount++;
+            if (answeredCount === quizData.length) {
+                showSummary();
+            }
+        }
+
+        function showSummary() {
+            const summaryBox = document.getElementById('quiz-summary');
+            const scoreText = document.getElementById('summary-score-text');
+            
+            let message = `Total Skor Anda: <strong>${totalScore} / 100</strong>. `;
+            if (totalScore >= 80) {
+                message += "🌟 Luar biasa! Pemahaman Anda mengenai desain kemasan produk sudah sangat profesional.";
+            } else if (totalScore >= 60) {
+                message += "👍 Bagus, pertahankan dan terus asah ketelitian dalam merancang pola kemasan.";
+            } else {
+                message += "📚 Yuk baca kembali ringkasan materi kemasan di atas!";
+            }
+            
+            scoreText.innerHTML = message;
+            summaryBox.style.display = 'block';
+            window.scrollTo({ top: summaryBox.offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            renderQuiz();
+            window.scrollTo({ top: document.getElementById('quiz-container').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        window.onload = function() {
+            renderDetectiveGame();
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>

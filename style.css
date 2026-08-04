@@ -1,0 +1,556 @@
+/* --- CSS RESET & VARIABEL WARNA (DUAL THEME) --- */
+:root {
+    --bg-color: #f8fafc;
+    --text-color: #0f172a;
+    --text-muted: #475569;
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --accent-bg: #eff6ff;
+    --badge-bg: #dbeafe;
+    --badge-text: #1e40af;
+    --header-bg: #ffffff;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="dark"] {
+    --bg-color: #0b0f19;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --card-bg: #1e293b;
+    --card-border: #334155;
+    --primary-color: #3b82f6;
+    --primary-hover: #60a5fa;
+    --accent-bg: #172554;
+    --badge-bg: #1e3a8a;
+    --badge-text: #93c5fd;
+    --header-bg: #0f172a;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- HEADER UTAMA --- */
+.main-header {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--card-border);
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.header-container h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.header-container p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* --- STICKY NAV BAR --- */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--card-border);
+    padding: 0.75rem 1rem;
+    backdrop-filter: blur(8px);
+    background-color: var(--header-bg);
+    transition: background-color 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.semester-tabs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid var(--card-border);
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    background-color: var(--card-border);
+    color: var(--text-color);
+}
+
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+
+.theme-toggle-btn {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--primary-color);
+}
+
+/* --- KONTEN UTAMA & SEMESTER SECTIONS --- */
+.content-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.semester-content {
+    display: none;
+}
+
+.semester-content.active-semester {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.semester-banner {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.semester-banner h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.semester-banner p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* --- PHASE CHUNKING & CARDS GRID --- */
+.phase-section {
+    margin-bottom: 2.5rem;
+}
+
+.phase-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+/* Card Styling */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary-color);
+}
+
+.meeting-badge {
+    display: inline-block;
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+    align-self: flex-start;
+}
+
+.card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.card p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--card-border);
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: 3rem;
+}
+
+/* --- RESPONSIVE LAYOUT MOBILE --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .semester-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tab-btn {
+        text-align: center;
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+
+    .theme-toggle-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-container h1 {
+        font-size: 1.35rem;
+    }
+    /* --- CSS TAMBAHAN UNTUK HALAMAN PERTEMUAN & KUIS --- */
+.lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-btn-link {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.nav-btn-link:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.nav-btn-link.primary-link {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+
+.nav-btn-link.primary-link:hover {
+    background-color: var(--primary-hover);
+    color: #ffffff;
+}
+
+.meeting-badge-large {
+    display: inline-block;
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+}
+
+.cards-grid-single {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.lesson-list {
+    padding-left: 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.action-card {
+    border-left: 4px solid var(--primary-color);
+}
+
+/* --- HEADER KARTU & IKON --- */
+.header-card-style {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header-icon-box {
+    font-size: 3rem;
+    background-color: var(--badge-bg);
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-text-box h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.25rem 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.header-text-box p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --- KARTU ILUSTRASI & IKON KONTEN --- */
+.card-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.illustration-box {
+    margin-top: 1rem;
+    width: 100%;
+    height: 160px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+}
+
+.illustration-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- KUIS SENGGOL BACOK STYLING (REAL-TIME) --- */
+.quiz-card-container {
+    border-color: var(--primary-color);
+}
+
+.quiz-question-box {
+    background-color: var(--bg-color);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.quiz-q-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.quiz-options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.quiz-choice-btn {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.quiz-choice-btn:hover:not(:disabled) {
+    background-color: var(--accent-bg);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.quiz-choice-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.correct-choice {
+    background-color: rgba(16, 185, 129, 0.15) !important;
+    border-color: #10b981 !important;
+    color: #10b981 !important;
+    font-weight: 600;
+}
+
+.wrong-choice {
+    background-color: rgba(239, 68, 68, 0.15) !important;
+    border-color: #ef4444 !important;
+    color: #ef4444 !important;
+}
+
+.quiz-feedback-msg {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.feedback-success {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.feedback-error {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.quiz-result-box {
+    background-color: var(--accent-bg);
+    border: 1px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.quiz-result-box h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/* Responsif Mobile Header Kartu */
+@media (max-width: 768px) {
+    .header-card-style {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-text-box h1 {
+        font-size: 1.25rem;
+    }
+}
+/* --- CSS TAMBAHAN MOCKUP ILUSTRASI HIRARKI --- */
+.mockup-poster {
+    background-color: var(--bg-color);
+    border: 1px dashed var(--card-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+}
+
+.bad-mockup {
+    border-color: rgba(239, 68, 68, 0.4);
+}
+
+.good-mockup {
+    border-color: rgba(16, 185, 129, 0.4);
+    background-color: rgba(16, 185, 129, 0.03);
+}
+
+.m-text {
+    display: block;
+}
+
+.m-text.small {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.m-text.normal {
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+.m-text.super-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+.m-text.sub-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.m-text.desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--card-bg);
+    padding: 0.25rem;
+    border-radius: 4px;
+    margin-top: 0.25rem;
+}
+}

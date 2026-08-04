@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 1: Mindset Desainer & Logika Aset Digital - MA Plus Sunan Giri</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS Terpisah -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigasi Modul (Home, Kembali, Tema, Lanjut) -->
+    <nav class="sticky-nav">
+        <div class="nav-container lesson-nav">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <!-- Tombol Ikon Rumah ke Index -->
+                <a href="index.html" class="nav-btn-link home-icon-btn" title="Kembali ke Beranda Silabus">🏠</a>
+            </div>
+            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Ganti Tema">
+                ☀️ Mode Terang
+            </button>
+
+            <a href="pertemuan_2.html" class="nav-btn-link primary-link">Pertemuan 2 &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- Header Materi: Gaya Kartu dan Ikon -->
+    <header class="content-container" style="margin-top: 1.5rem; margin-bottom: 0;">
+        <div class="header-card-style">
+            <div class="header-icon-box">🧠</div>
+            <div class="header-text-box">
+                <span class="meeting-badge-large">Pertemuan 1 • Semester 1</span>
+                <h1>Membangun Mindset Desainer & Logika Aset Digital</h1>
+                <p>MA Plus Sunan Giri • Mata Pelajaran Peminatan IT (Desain Grafis)</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Utama Materi -->
+    <main class="content-container">
+
+        <!-- Quotes Penyemangat -->
+        <div class="card quote-card" style="margin-bottom: 2.5rem; border-left: 4px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), transparent);">
+            <p style="font-style: italic; font-size: 0.95rem; color: var(--text-color);">
+                "Desain yang bagus itu seperti lelucon: kalau kamu harus menjelaskannya, berarti itu jelek. Dan ingat, revisi klien itu ibarat takdir, dinikmati saja sambil istighfar." ☕✨
+            </p>
+        </div>
+
+        <!-- Tujuan Pembelajaran -->
+        <section class="phase-section">
+            <h3 class="phase-title">🎯 Tujuan Pembelajaran</h3>
+            <div class="cards-grid-single">
+                <div class="card">
+                    <h4>Capaian Kompetensi</h4>
+                    <ul class="lesson-list">
+                        <li>💡 Memahami perbedaan esensial pola pikir seorang seniman vs desainer grafis.</li>
+                        <li>📐 Mampu membedakan karakteristik visual aset <strong>Vektor</strong> dan <strong>Bitmap</strong> secara langsung.</li>
+                        <li>👁️ Menguasai teknik <strong>Visual Hierarchy</strong> beserta contoh visual penerapannya agar pesan desain tepat sasaran.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 1: PERBANDINGAN DESAINER VS SENIMAN -->
+        <section class="phase-section">
+            <h3 class="phase-title">1. Pertarungan Mindset: Seniman vs Desainer Grafis</h3>
+            <p style="margin-bottom: 1.25rem; color: var(--text-muted); font-size: 0.9rem;">
+                Seringkali orang keliru menyamakan keduanya. Mari lihat perbandingan head-to-head berikut agar arah kerja kita jelas:
+            </p>
+            
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="card comparison-box artist-side">
+                    <div class="card-icon-title">🎨 <h4>Seniman (Artist)</h4></div>
+                    <ul class="lesson-list" style="margin-top: 0.75rem;">
+                        <li>🎯 <strong>Tujuan:</strong> Mengekspresikan emosi, ide, & perasaan pribadi.</li>
+                        <li>❓ <strong>Pertanyaan Utama:</strong> <em>"Bagaimana perasaanku terhadap karya ini?"</em></li>
+                        <li>⚖️ <strong>Tolok Ukur:</strong> Subjektif (indah di mata penciptanya).</li>
+                        <li>💬 <strong>Fokus:</strong> Karya berbicara untuk dirinya sendiri.</li>
+                    </ul>
+                </div>
+
+                <div class="card comparison-box designer-side" style="border-color: var(--primary-color);">
+                    <div class="card-icon-title">🛠️ <h4>Desainer Grafis (Problem Solver)</h4></div>
+                    <ul class="lesson-list" style="margin-top: 0.75rem;">
+                        <li>🎯 <strong>Tujuan:</strong> Menyampaikan pesan dan menyelesaikan masalah klien/audiens.</li>
+                        <li>❓ <strong>Pertanyaan Utama:</strong> <em>"Apakah audiens paham pesan yang disampaikan?"</em></li>
+                        <li>⚖️ <strong>Tolok Ukur:</strong> Objektif (berfungsi atau tidak, terbaca atau tidak).</li>
+                        <li>💬 <strong>Fokus:</strong> Fungsi komunikasi mendahului keindahan dekoratif.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 2: PERBANDINGAN VEKTOR VS BITMAP -->
+        <section class="phase-section">
+            <h3 class="phase-title">2. Logika Perbandingan Aset: Vektor vs Bitmap (Raster)</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon-title">📈 <h4>Vektor (CorelDRAW / AI)</h4></div>
+                    <p>Berbasis kurva matematika. Di-zoom selebar apa pun garisnya tetap tajam sempurna.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1626544827763-d516dce335e2?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Vektor Grafis">
+                    </div>
+                    <p style="margin-top: 0.75rem; font-size: 0.8rem; color: #10b981;"><strong>👍 Cocok untuk:</strong> Logo, ikon, kaos, baliho jalan raya.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon-title">🖼️ <h4>Bitmap / Raster (Photoshop)</h4></div>
+                    <p>Berbasis grid piksel warna. Jika dipaksa zoom berlebihan, kotak-kotak piksel akan pecah.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Piksel Bitmap">
+                    </div>
+                    <p style="margin-top: 0.75rem; font-size: 0.8rem; color: #ef4444;"><strong>👎 Kelemahan:</strong> Pecah/blur jika diperbesar melebihi resolusi aslinya.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 3: PENDALAMAN VISUAL HIERARCHY DENGAN ILUSTRASI -->
+        <section class="phase-section">
+            <h3 class="phase-title">3. Masterclass Visual Hierarchy (Ilustrasi Contoh Nyata)</h3>
+            <p style="margin-bottom: 1.25rem; color: var(--text-muted); font-size: 0.9rem;">
+                Perhatikan simulasi perbandingan visual di bawah ini. Mana poster pengajian sekolah yang langsung membuat Anda paham informasinya dalam 2 detik pertama?
+            </p>
+
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <!-- Contoh Salah / Tanpa Hirarki -->
+                <div class="card bad-hierarchy-demo">
+                    <div class="card-icon-title" style="color: #ef4444;">❌ <h4>Contoh: TANPA Hirarki (Berantakan)</h4></div>
+                    <div class="mockup-poster bad-mockup">
+                        <span class="m-text small">Pondok Pesantren MA Plus Sunan Giri Mengundang Anda</span>
+                        <span class="m-text small">Hadirilah Acara Akbar</span>
+                        <span class="m-text normal">PENGAJIAN UMUM DAN SANTunan YATIM</span>
+                        <span class="m-text small">Hari Minggu Pukul 08.00 WIB Bertempat di Aula Gedung Utama Bersama Kiai Haji Anwar Zaid</span>
+                    </div>
+                    <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
+                        <strong>Masalah:</strong> Semua teks ukurannya sama rata. Mata audiens bingung harus membaca bagian mana terlebih dahulu, akibatnya pesan gagal tersampaikan.
+                    </p>
+                </div>
+
+                <!-- Contoh Benar / Dengan Hirarki -->
+                <div class="card good-hierarchy-demo" style="border-color: #10b981;">
+                    <div class="card-icon-title" style="color: #10b981;">✅ <h4>Contoh: DENGAN Hirarki (Terarah)</h4></div>
+                    <div class="mockup-poster good-mockup">
+                        <span class="m-text super-title">PENGAJIAN AKBAR</span>
+                        <span class="m-text sub-title">MA Plus Sunan Giri Bersama KH. Anwar Zaid</span>
+                        <span class="m-text desc">📅 Minggu, 10 Okt | ⏰ 08.00 WIB | 📍 Aula Utama</span>
+                    </div>
+                    <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
+                        <strong>Kelebihan:</strong> Menggunakan prinsip ukuran (Scale) & Bobot Font. Mata audiens langsung menangkap <em>"PENGAJIAN AKBAR"</em> duluan, lalu pembicara, baru detail waktu.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4 Pilar Kunci Hirarki -->
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 1.5rem;">
+                <div class="card">
+                    <h4>📏 1. Ukuran (Scale)</h4>
+                    <p style="font-size: 0.8rem;">Judul utama wajib paling besar agar mendominasi pandangan pertama.</p>
+                </div>
+                <div class="card">
+                    <h4>🎨 2. Kontras Warna</h4>
+                    <p style="font-size: 0.8rem;">Sorot informasi penting dengan warna yang paling mencolok dari elemen sekitarnya.</p>
+                </div>
+                <div class="card">
+                    <h4>🔤 3. Bobot Teks (Weight)</h4>
+                    <p style="font-size: 0.8rem;">Gunakan kombinasi <strong>Bold</strong> untuk penekanan dan Regular untuk penjelasan.</p>
+                </div>
+                <div class="card">
+                    <h4>👀 4. Alur Baca (Z / F-Pattern)</h4>
+                    <p style="font-size: 0.8rem;">Susun posisi elemen dari kiri-atas ke kanan-bawah mengikuti kebiasaan mata manusia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= KUIS INTERAKTIF: KUIS SENGGOL BACOK ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🔥 Kuis Interaktif: "Kuis Senggol Bacok"</h3>
+            <div class="card quiz-card-container">
+                <h4>Uji Pemahaman Teori Secara Langsung!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Pilih jawaban yang paling benar. Respon dan umpan balik langsung akan muncul begitu Anda mengklik pilihan.</p>
+                
+                <div id="quiz-container">
+                    <!-- Soal Kuis dirender dinamis via JavaScript -->
+                </div>
+
+                <div id="quiz-summary" class="quiz-result-box" style="display: none; margin-top: 1.5rem;">
+                    <h3>Skor Akhir Kuis Anda:</h3>
+                    <p id="summary-score-text"></p>
+                    <button class="tab-btn active" onclick="resetQuiz()" style="margin-top: 1rem;">Ulangi Kuis</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aktivitas Praktik / Tugas Kelas -->
+        <section class="phase-section">
+            <h3 class="phase-title">🛠️ Aktivitas Praktik Kelas</h3>
+            <div class="cards-grid-single">
+                <div class="card action-card">
+                    <div class="card-icon-title">💬 <h4>Bedah Visual Bersama (Analisis Poster & Feed IG)</h4></div>
+                    <p>Guru menampilkan 2 contoh poster (satu berantakan tanpa hirarki, satu lagi rapi dan terarah). Siswa berdiskusi membedah:</p>
+                    <ul class="lesson-list" style="margin-top: 0.5rem;">
+                        <li>🔍 Ke mana arah mata pertama kali melihat pada poster tersebut?</li>
+                        <li>⚖️ Apakah kontras ukuran dan warna sudah menuntun pesan utama dengan baik?</li>
+                        <li>⚙️ Apakah pemilihan jenis file (vektor/raster) sudah tepat pada objek pendukungnya?</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MA Plus Sunan Giri • Modul Peminatan IT Desain Grafis</p>
+    </footer>
+
+    <!-- Script JavaScript Dual-Theme & Kuis Real-Time Respon -->
+    <script>
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const btn = document.getElementById('themeToggleBtn');
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'light');
+                btn.textContent = '🌙 Mode Gelap';
+            } else {
+                htmlEl.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ Mode Terang';
+            }
+        }
+
+        // Data 10 Soal Kuis Senggol Bacok
+        const quizData = [
+            {
+                question: "1. Apa perbedaan fokus utama antara seorang Seniman dan seorang Desainer Grafis?",
+                options: ["Seniman fokus pada fungsi komersial, desainer pada estetika murni", "Seniman fokus pada ekspresi diri, desainer fokus menyelesaikan masalah komunikasi", "Tidak ada bedanya sama sekali", "Desainer hanya bekerja menggunakan kuas cat air"],
+                answer: 1,
+                explanation: "Tepat! Seniman mengekspresikan diri, sementara desainer memecahkan masalah pesan audiens."
+            },
+            {
+                question: "2. Ketika klien meminta desain poster yang efektif secara fungsi, sudut pandang mana yang harus diutamakan?",
+                options: ["Apakah saya menyukai warnanya?", "Apakah audiens langsung paham pesan utamanya dalam hitungan detik?", "Apakah file ukurannya sangat besar?", "Apakah font-nya paling mahal?"],
+                answer: 1,
+                explanation: "Benar! Tolok ukur utama desain adalah apakah pesan berhasil dikomunikasikan ke audiens."
+            },
+            {
+                question: "3. Format gambar digital apa yang disusun berdasarkan rumus matematika dan garis kurva?",
+                options: ["Bitmap", "Raster", "Vektor", "GIF Animasi"],
+                answer: 2,
+                explanation: "Hebat! Vektor dibentuk oleh perhitungan matematis garis, titik, dan kurva."
+            },
+            {
+                question: "4. Apa keunggulan utama dari format file Vektor?",
+                options: ["Warna sangat detail dan kaya", "Ukuran file sangat kecil dan tidak pecah saat diperbesar", "Cocok untuk foto pemandangan", "Format standar kamera digital"],
+                answer: 1,
+                explanation: "Benar! Vektor aman diperbesar seberapa pun ukurannya karena berbasis kurva matematis."
+            },
+            {
+                question: "5. Format aset digital apa yang disusun oleh kumpulan titik piksel warna (grid)?",
+                options: ["CorelDRAW CDR", "Adobe Illustrator AI", "Bitmap / Raster", "SVG murni"],
+                answer: 2,
+                explanation: "Tepat! Bitmap/Raster tersusun dari grid piksel warna."
+            },
+            {
+                question: "6. Apa akibatnya jika file berbasis Bitmap (seperti foto JPG) diperbesar secara berlebihan?",
+                options: ["Gambar akan semakin tajam", "Gambar akan pecah, kabur, atau ber-pixel", "File otomatis berubah menjadi vektor", "Warna akan berubah menjadi hitam putih"],
+                answer: 1,
+                explanation: "Benar! Karena berbasis piksel tetap, memperbesar raster akan membuatnya pecah/blur."
+            },
+            {
+                question: "7. Apa fungsi utama dari Visual Hierarchy dalam desain grafis?",
+                options: ["Membuat desain terlihat penuh dan ramai", "Mengatur urutan elemen agar mata audiens membaca pesan sesuai prioritas", "Menentukan jenis font yang mahal", "Mengubah warna background otomatis"],
+                answer: 1,
+                explanation: "Tepat! Hirarki visual memandu mata audiens membaca informasi dari yang paling penting hingga penjelas."
+            },
+            {
+                question: "8. Elemen apa yang paling cepat menarik perhatian mata audiens berdasarkan hirarki visual?",
+                options: ["Teks berukuran paling kecil di sudut", "Objek atau teks dengan ukuran terbesar dan kontras tinggi", "Warna yang paling redup/pudar", "Ruang kosong di bagian bawah"],
+                answer: 1,
+                explanation: "Betul! Skala besar dan kontras tinggi adalah magnet utama pengarah pandangan."
+            },
+            {
+                question: "9. Pola baca apa yang secara psikologis sering digunakan manusia saat memindai teks atau halaman web yang panjang?",
+                options: ["Pola huruf F atau Z", "Pola melingkar dari dalam ke luar", "Pola zig-zag dari bawah ke atas", "Pola garis lurus vertikal saja"],
+                answer: 0,
+                explanation: "Tepat! Manusia membaca layar digital secara cepat mengikuti alur pola huruf 'F' atau 'Z'."
+            },
+            {
+                question: "10. Manakah yang bukan merupakan tujuan dari penerapan Visual Hierarchy yang baik?",
+                options: ["Menuntun perhatian audiens dengan mulus", "Membuat audiens bingung mencari informasi penting", "Memperjelas informasi utama", "Menghindari kelelahan visual audiens"],
+                answer: 1,
+                explanation: "Benar! Desain yang baik justru memperjelas pesan, bukan membuat audiens kebingungan mencari info."
+            }
+        ];
+
+        let answeredCount = 0;
+        let totalScore = 0;
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+            answeredCount = 0;
+            totalScore = 0;
+            document.getElementById('quiz-summary').style.display = 'none';
+
+            quizData.forEach((q, index) => {
+                let optionsHtml = '';
+                q.options.forEach((opt, optIndex) => {
+                    optionsHtml += `
+                        <button class="quiz-choice-btn" id="q${index}-opt${optIndex}" onclick="checkAnswer(${index}, ${optIndex})">
+                            ${opt}
+                        </button>
+                    `;
+                });
+
+                container.innerHTML += `
+                    <div class="quiz-question-box" id="q-box-${index}">
+                        <p class="quiz-q-title"><strong>${q.question}</strong></p>
+                        <div class="quiz-options-grid">${optionsHtml}</div>
+                        <div id="feedback-${index}" class="quiz-feedback-msg" style="display: none;"></div>
+                    </div>
+                `;
+            });
+        }
+
+        function checkAnswer(qIndex, selectedOpt) {
+            const qData = quizData[qIndex];
+            const feedbackEl = document.getElementById(`feedback-${qIndex}`);
+            const boxEl = document.getElementById(`q-box-${qIndex}`);
+            
+            for (let i = 0; i < qData.options.length; i++) {
+                const btn = document.getElementById(`q${qIndex}-opt${i}`);
+                btn.disabled = true;
+                if (i === qData.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedOpt) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedOpt === qData.answer) {
+                totalScore += 10;
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Benar!</strong> ${qData.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> ${qData.explanation}`;
+            }
+
+            feedbackEl.style.display = 'block';
+            boxEl.style.borderLeft = (selectedOpt === qData.answer) ? "4px solid #10b981" : "4px solid #ef4444";
+
+            answeredCount++;
+            if (answeredCount === quizData.length) {
+                showSummary();
+            }
+        }
+
+        function showSummary() {
+            const summaryBox = document.getElementById('quiz-summary');
+            const scoreText = document.getElementById('summary-score-text');
+            
+            let message = `Total Skor Anda: <strong>${totalScore} / 100</strong>. `;
+            if (totalScore >= 80) {
+                message += "🌟 Luar biasa! Pemahaman teori desain Anda sudah sekelas profesional muda.";
+            } else if (totalScore >= 60) {
+                message += "👍 Bagus, pertahankan dan terus tingkatkan pemahaman konsep visualnya.";
+            } else {
+                message += "📚 Yuk baca kembali ringkasan materi di atas supaya makin jago!";
+            }
+            
+            scoreText.innerHTML = message;
+            summaryBox.style.display = 'block';
+            window.scrollTo({ top: summaryBox.offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            renderQuiz();
+            window.scrollTo({ top: document.getElementById('quiz-container').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        window.onload = function() {
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>

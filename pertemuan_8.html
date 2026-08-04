@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 8: Kartu Nama, ID Card & Fitur PowerClip - MA Plus Sunan Giri</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS Terpisah -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigasi Modul (Home, Kembali, Tema, Lanjut) -->
+    <nav class="sticky-nav">
+        <div class="nav-container lesson-nav">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <a href="index.html" class="nav-btn-link home-icon-btn" title="Kembali ke Beranda Silabus">🏠</a>
+                <a href="pertemuan_7.html" class="nav-btn-link">&larr; Pertemuan 7</a>
+            </div>
+            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Ganti Tema">
+                ☀️ Mode Terang
+            </button>
+            <a href="pertemuan_9.html" class="nav-btn-link primary-link">Pertemuan 9 &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- Header Materi: Gaya Kartu dan Ikon -->
+    <header class="content-container" style="margin-top: 1.5rem; margin-bottom: 0;">
+        <div class="header-card-style">
+            <div class="header-icon-box">🪪</div>
+            <div class="header-text-box">
+                <span class="meeting-badge-large">Pertemuan 8 • Semester 1</span>
+                <h1>Desain Alat Peraga Promosi: Kartu Nama, ID Card, & Fitur PowerClip</h1>
+                <p>MA Plus Sunan Giri • Mata Pelajaran Peminatan IT (Desain Grafis)</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Utama Materi -->
+    <main class="content-container">
+
+        <!-- Quotes Penyemangat -->
+        <div class="card quote-card" style="margin-bottom: 2.5rem; border-left: 4px solid #10b981; background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), transparent);">
+            <p style="font-style: italic; font-size: 0.95rem; color: var(--text-color);">
+                "Kartu nama adalah cerminan profesionalisme pertama sebelum kamu sempat berbicara. Jangan biarkan teks penting terpotong mesin cetak hanya karena mengabaikan zona aman!" 🪪✨
+            </p>
+        </div>
+
+        <!-- Tujuan Pembelajaran -->
+        <section class="phase-section">
+            <h3 class="phase-title">🎯 Tujuan Pembelajaran</h3>
+            <div class="cards-grid-single">
+                <div class="card">
+                    <h4>Capaian Kompetensi</h4>
+                    <ul class="lesson-list">
+                        <li>🪪 Memahami standar ukuran cetak fisik untuk Kartu Nama dan ID Card profesional.</li>
+                        <li>📐 Menguasai konsep teknis percetakan: **Bleed** (area ekstensi potong) dan **Safe Zone** (zona aman teks).</li>
+                        <li>🖼️ Memanfaatkan fitur andalan CorelDRAW, yaitu **PowerClip**, untuk memasukkan foto ke dalam bingkai vektor secara rapi.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 1 -->
+        <section class="phase-section">
+            <h3 class="phase-title">1. Anatomi Cetak Fisik: Bleed & Safe Zone</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon-title">✂️ <h4>Bleed (Area Ekstensi Potong)</h4></div>
+                    <p>Area tambahan di luar ukuran potong kartu (biasanya ditambah 2-3 mm di tiap sisi). Berfungsi mencegah munculnya garis putih pinggiran kertas jika pisau mesin potong meleset sedikit.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon-title">🛡️ <h4>Safe Zone (Zona Aman Teks)</h4></div>
+                    <p>Batas aman di dalam kartu di mana seluruh teks penting, logo, dan informasi diletakkan. Jangan pernah menaruh nomor HP atau nama di pinggir garis potong!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poin Materi 2: POWERCLIP -->
+        <section class="phase-section">
+            <h3 class="phase-title">2. Masterclass Fitur PowerClip (Memasukkan Foto ke Bingkai Vektor)</h3>
+            <p style="margin-bottom: 1.25rem; color: var(--text-muted); font-size: 0.9rem;">
+                PowerClip adalah fitur ajaib di CorelDRAW yang memungkinkan kita memasukkan objek (seperti foto pasfoto) ke dalam wadah bingkai vektor apa saja (lingkaran, kotak sudut tumpul, atau bentuk kustom).
+            </p>
+
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="card">
+                    <div class="card-icon-title" style="color: #3b82f6;">📥 <h4>Langkah Masuk PowerClip</h4></div>
+                    <p>Klik foto yang ingin dimasukkan, pilih menu <strong>Object > PowerClip > Place Inside Frame</strong>, lalu klik pada bingkai vektor tujuan.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1626544827763-d516dce335e2?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi PowerClip">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon-title" style="color: #f59e0b;">⚙️ <h4>Edit & Adjust Content</h4></div>
+                    <p>Jika posisi foto di dalam bingkai kurang pas, klik ikon tombol *Edit PowerClip* atau tahan tombol <em>Ctrl</em> lalu klik dua kali pada bingkai untuk mengatur posisi dan ukuran foto.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Edit PowerClip">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon-title" style="color: #10b981;">📤 <h4>Extract Content</h4></div>
+                    <p>Jika ingin mengeluarkan kembali foto dari bingkai tanpa menghapusnya, cukup klik kanan pada bingkai lalu pilih opsi <strong>Extract Contents</strong>.</p>
+                    <div class="illustration-box">
+                        <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi Extract PowerClip">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ZONA DETEKTIF VISUAL ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🕵️‍♂️ Mode Tantangan: Zona Detektif Visual</h3>
+            <div class="card detective-card-container" style="border-color: #8b5cf6;">
+                <h4>Uji Logika Fitur PowerClip & Cetak Kartu Nama!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Analisis studi kasus di bawah ini, lalu tentukan tindakan teknis yang paling tepat bagi seorang desainer.</p>
+
+                <div id="detective-challenge-container">
+                    <!-- Kasus Detektif Visual dirender dinamis via JS -->
+                </div>
+                <div id="detective-feedback" class="quiz-feedback-msg" style="display: none; margin-top: 1rem;"></div>
+            </div>
+        </section>
+
+        <!-- ================= KUIS INTERAKTIF: KUIS SENGGOL BACOK ================= -->
+        <section class="phase-section">
+            <h3 class="phase-title">🔥 Kuis Interaktif: "Kuis Senggol Bacok" (Pertemuan 8)</h3>
+            <div class="card quiz-card-container">
+                <h4>Uji Pemahaman Kartu Nama & PowerClip!</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Pilih jawaban yang paling benar. Respon instan langsung muncul saat Anda mengklik pilihan.</p>
+                
+                <div id="quiz-container">
+                    <!-- Soal Kuis dirender dinamis via JavaScript -->
+                </div>
+
+                <div id="quiz-summary" class="quiz-result-box" style="display: none; margin-top: 1.5rem;">
+                    <h3>Skor Akhir Kuis Anda:</h3>
+                    <p id="summary-score-text"></p>
+                    <button class="tab-btn active" onclick="resetQuiz()" style="margin-top: 1rem;">Ulangi Kuis</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aktivitas Praktik / Tugas Kelas -->
+        <section class="phase-section">
+            <h3 class="phase-title">🛠️ Aktivitas Praktik Lab Komputer</h3>
+            <div class="cards-grid-single">
+                <div class="card action-card">
+                    <div class="card-icon-title">💻 <h4>Mendesain Kartu Nama Pribadi & ID Card Panitia</h4></div>
+                    <p>Siswa membuka aplikasi CorelDRAW dan menjalankan latihan berikut:</p>
+                    <ul class="lesson-list" style="margin-top: 0.5rem;">
+                        <li>1. Mengatur ukuran dokumen kartu nama standar (90 x 55 mm) dengan memperhitungkan area *Bleed*.</li>
+                        <li>2. Menyusun informasi kontak, logo, dan latar belakang estetis di dalam *Safe Zone*.</li>
+                        <li>3. Menggunakan fitur <strong>PowerClip</strong> untuk menyematkan pasfoto siswa ke dalam bingkai lingkaran/kotak pada ID Card.</li>
+                        <li>4. Menyimpan file tugas ke format <code>pertemuan8_namasiswa.cdr</code>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MA Plus Sunan Giri • Modul Peminatan IT Desain Grafis</p>
+    </footer>
+
+    <!-- Script JavaScript: Dual-Theme, Zona Detektif Visual, & Kuis Real-Time -->
+    <script>
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const btn = document.getElementById('themeToggleBtn');
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'light');
+                btn.textContent = '🌙 Mode Gelap';
+            } else {
+                htmlEl.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ Mode Terang';
+            }
+        }
+
+        // Data Tantangan Zona Detektif Visual Pertemuan 8
+        const detectiveCase = {
+            caseTitle: "Kasus #08: Misteri Teks Terpotong Mesin Cetak",
+            caseDesc: "Seorang siswa mendesain ID card dengan meletakkan nomor telepon persis di tepi garis paling luar kartu. Hasilnya, saat dicetak dan dipotong oleh mesin percetakan, separuh angka nomor teleponnya ikut terpotong hilang. Apa konsep teknis percetakan yang diabaikan oleh siswa tersebut?",
+            options: [
+                "Mode warna yang digunakan salah menjadi RGB", 
+                "Tidak memperhitungkan batas zona aman teks (*Safe Zone*) di dalam area kartu", 
+                "Lupa menyimpan file ke format .cdr versi rendah", 
+                "Salah menggunakan fitur PowerClip"
+            ],
+            answer: 1, 
+            explanation: "Tepat sekali Detektif! Teks penting wajib diletakkan di dalam **Safe Zone** agar aman dari risiko pergeseran pisau mesin potong cetak."
+        };
+
+        function renderDetectiveGame() {
+            const container = document.getElementById('detective-challenge-container');
+            let buttonsHtml = '';
+            detectiveCase.options.forEach((opt, idx) => {
+                buttonsHtml += `<button class="quiz-choice-btn" id="det-opt-${idx}" onclick="checkDetective(${idx})">${opt}</button>`;
+            });
+
+            container.innerHTML = `
+                <div style="background: var(--bg-color); padding: 1rem; border-radius: 8px; border: 1px dashed var(--card-border);">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text-color);">${detectiveCase.caseTitle}</p>
+                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">${detectiveCase.caseDesc}</p>
+                    <div class="quiz-options-grid">${buttonsHtml}</div>
+                </div>
+            `;
+        }
+
+        function checkDetective(selectedIdx) {
+            const feedbackEl = document.getElementById('detective-feedback');
+            for (let i = 0; i < detectiveCase.options.length; i++) {
+                const btn = document.getElementById(`det-opt-${i}`);
+                btn.disabled = true;
+                if (i === detectiveCase.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedIdx) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedIdx === detectiveCase.answer) {
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Analisis Benar!</strong> ${detectiveCase.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> Jawaban yang benar adalah pilihan kedua. ${detectiveCase.explanation}`;
+            }
+            feedbackEl.style.display = 'block';
+        }
+
+        // Data 10 Soal Kuis Pertemuan 8 Kartu Nama & PowerClip
+        const quizData = [
+            {
+                question: "1. Apa nama fitur di CorelDRAW yang digunakan untuk memasukkan foto ke dalam wadah bingkai vektor (seperti kotak atau lingkaran)?",
+                options: ["Weld", "PowerClip", "Trim", "Mesh Fill"],
+                answer: 1,
+                explanation: "Tepat! PowerClip adalah fitur utama untuk memasukkan objek ke dalam bingkai."
+            },
+            {
+                question: "2. Berapa ukuran standar umum untuk sebuah kartu nama komersial (*business card*)?",
+                options: ["100 x 100 cm", "90 x 55 mm", "3 x 4 cm", "A4 Portrait"],
+                answer: 1,
+                explanation: "Benar! Ukuran standar umum kartu nama adalah sekitar 90 x 55 mm."
+            },
+            {
+                question: "3. Apa fungsi utama dari area *Bleed* pada desain dokumen cetak?",
+                options: ["Membuat warna file menjadi transparan", "Area ekstensi pinggiran ekstra untuk mengantisipasi melesetnya mesin potong kertas", "Menambah jumlah halaman otomatis", "Mengubah file menjadi format bitmap"],
+                answer: 1,
+                explanation: "Tepat! Bleed mencegah munculnya garis putih pinggiran kertas saat pemotongan fisik."
+            },
+            {
+                question: "4. Apa yang dimaksud dengan *Safe Zone* (Zona Aman) dalam desain alat peraga promosi?",
+                options: ["Area di dalam kartu tempat menaruh teks penting agar aman dari risiko terpotong mesin", "Tempat menyimpan file cadangan di flashdisk", "Ruangan khusus guru komputer di madrasah", "Folder penyimpanan backup CorelDRAW"],
+                answer: 0,
+                explanation: "Hebat! Safe Zone adalah batas aman penempatan informasi penting."
+            },
+            {
+                question: "5. Bagaimana cara cepat masuk ke mode edit konten foto di dalam bingkai PowerClip?",
+                options: ["Tekan tombol Delete", "Tahan tombol Ctrl lalu klik dua kali pada bingkai PowerClip", "Klik kanan lalu pilih Print", "Tekan F4"],
+                answer: 1,
+                explanation: "Tepat! Ctrl + klik dua kali adalah jalan pintas untuk mengedit isi PowerClip."
+            },
+            {
+                question: "6. Jika kita ingin mengeluarkan kembali foto dari dalam bingkai PowerClip tanpa menghapusnya, perintah apa yang dipilih?",
+                options: ["Extract Contents", "Lock Object", "Convert to Curves", "Delete Page"],
+                answer: 0,
+                explanation: "Benar! Extract Contents mengeluarkan kembali objek dari wadah bingkainya."
+            },
+            {
+                question: "7. Mengapa informasi penting seperti nomor telepon atau email tidak boleh diletakkan tepat di garis paling pinggir kartu nama?",
+                options: ["Karena warnanya akan luntur", "Karena berisiko terpotong oleh mesin potong kertas saat finishing cetak", "Karena membuat ukuran file membengkak", "Karena dilarang oleh aturan huruf"],
+                answer: 1,
+                explanation: "Tepat! Risiko pergeseran mesin potong membuat elemen di tepi luar rentan terpotong."
+            },
+            {
+                question: "8. Dalam pembuatan ID Card panitia kegiatan, elemen apa yang biasanya wajib disematkan menggunakan PowerClip?",
+                options: ["Pasfoto resmi pemilik ID Card", "Logo perusahaan pembuat mesin cetak", "KODE QR acak tanpa fungsi", "Teks paragraf panjang sejarah sekolah"],
+                answer: 0,
+                explanation: "Betul! Pasfoto pemilik ID card dimasukkan ke bingkai vektor menggunakan PowerClip."
+            },
+            {
+                question: "9. Di manakah menu navigasi utama untuk memasukkan objek ke PowerClip secara manual?",
+                options: ["Object > PowerClip > Place Inside Frame", "File > Save As", "Edit > Undo", "Effects > 3D Effect"],
+                answer: 0,
+                explanation: "Tepat! Jalur menunya berada di Object > PowerClip > Place Inside Frame."
+            },
+            {
+                question: "10. Apa keuntungan merancang desain kartu nama dan ID Card secara presisi menggunakan software vektor CorelDRAW?",
+                options: ["Hasil cetak teks dan garis pinggir tetap tajam, rapi, dan tidak pecah saat dicetak", "Proses render memakan waktu 2 jam", "File otomatis menjadi format video", "Tidak memerlukan printer sama sekali"],
+                answer: 0,
+                explanation: "Benar! Keunggulan vektor menjaga ketajaman garis cetak sekecil apa pun ukuran fisiknya."
+            }
+        ];
+
+        let answeredCount = 0;
+        let totalScore = 0;
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+            answeredCount = 0;
+            totalScore = 0;
+            document.getElementById('quiz-summary').style.display = 'none';
+
+            quizData.forEach((q, index) => {
+                let optionsHtml = '';
+                q.options.forEach((opt, optIndex) => {
+                    optionsHtml += `
+                        <button class="quiz-choice-btn" id="q${index}-opt${optIndex}" onclick="checkAnswer(${index}, ${optIndex})">
+                            ${opt}
+                        </button>
+                    `;
+                });
+
+                container.innerHTML += `
+                    <div class="quiz-question-box" id="q-box-${index}">
+                        <p class="quiz-q-title"><strong>${q.question}</strong></p>
+                        <div class="quiz-options-grid">${optionsHtml}</div>
+                        <div id="feedback-${index}" class="quiz-feedback-msg" style="display: none;"></div>
+                    </div>
+                `;
+            });
+        }
+
+        function checkAnswer(qIndex, selectedOpt) {
+            const qData = quizData[qIndex];
+            const feedbackEl = document.getElementById(`feedback-${qIndex}`);
+            const boxEl = document.getElementById(`q-box-${qIndex}`);
+            
+            for (let i = 0; i < qData.options.length; i++) {
+                const btn = document.getElementById(`q${qIndex}-opt${i}`);
+                btn.disabled = true;
+                if (i === qData.answer) {
+                    btn.classList.add('correct-choice');
+                } else if (i === selectedOpt) {
+                    btn.classList.add('wrong-choice');
+                }
+            }
+
+            if (selectedOpt === qData.answer) {
+                totalScore += 10;
+                feedbackEl.className = "quiz-feedback-msg feedback-success";
+                feedbackEl.innerHTML = `✅ <strong>Benar!</strong> ${qData.explanation}`;
+            } else {
+                feedbackEl.className = "quiz-feedback-msg feedback-error";
+                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> ${qData.explanation}`;
+            }
+
+            feedbackEl.style.display = 'block';
+            boxEl.style.borderLeft = (selectedOpt === qData.answer) ? "4px solid #10b981" : "4px solid #ef4444";
+
+            answeredCount++;
+            if (answeredCount === quizData.length) {
+                showSummary();
+            }
+        }
+
+        function showSummary() {
+            const summaryBox = document.getElementById('quiz-summary');
+            const scoreText = document.getElementById('summary-score-text');
+            
+            let message = `Total Skor Anda: <strong>${totalScore} / 100</strong>. `;
+            if (totalScore >= 80) {
+                message += "🌟 Luar biasa! Penguasaan PowerClip dan standar cetak kartu Anda sudah sangat handal.";
+            } else if (totalScore >= 60) {
+                message += "👍 Bagus, terus tingkatkan ketelitian dalam mengatur zona aman cetak.";
+            } else {
+                message += "📚 Yuk baca kembali ringkasan materi di atas!";
+            }
+            
+            scoreText.innerHTML = message;
+            summaryBox.style.display = 'block';
+            window.scrollTo({ top: summaryBox.offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            renderQuiz();
+            window.scrollTo({ top: document.getElementById('quiz-container').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        window.onload = function() {
+            renderDetectiveGame();
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>
