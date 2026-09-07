@@ -10,13 +10,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Link CSS Terpisah -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .nav-links-wrapper {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .content-header {
+            margin-top: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .quote-card {
+            margin-bottom: 2.5rem;
+            border-left: 4px solid #f59e0b;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), transparent);
+        }
+
+        .quote-text {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+
+        .lesson-intro {
+            margin-bottom: 1.25rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .feature-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .card-icon-title--blue { color: #3b82f6; }
+        .card-icon-title--amber { color: #f59e0b; }
+        .card-icon-title--green { color: #10b981; }
+    </style>
 </head>
 <body>
 
     <!-- Header Navigasi Modul (Home, Kembali, Tema, Lanjut) -->
     <nav class="sticky-nav">
         <div class="nav-container lesson-nav">
-            <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <div class="nav-links-wrapper">
                 <a href="index.html" class="nav-btn-link home-icon-btn" title="Kembali ke Beranda Silabus">🏠</a>
                 <a href="pertemuan_6.html" class="nav-btn-link">&larr; Pertemuan 6</a>
             </div>
@@ -28,7 +66,7 @@
     </nav>
 
     <!-- Header Materi: Gaya Kartu dan Ikon -->
-    <header class="content-container" style="margin-top: 1.5rem; margin-bottom: 0;">
+    <header class="content-container content-header">
         <div class="header-card-style">
             <div class="header-icon-box">🛡️</div>
             <div class="header-text-box">
@@ -43,8 +81,8 @@
     <main class="content-container">
 
         <!-- Quotes Penyemangat -->
-        <div class="card quote-card" style="margin-bottom: 2.5rem; border-left: 4px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), transparent);">
-            <p style="font-style: italic; font-size: 0.95rem; color: var(--text-color);">
+        <div class="card quote-card">
+            <p class="quote-text">
                 "Logo yang hebat itu sederhana, mudah diingat, dan tidak kedaluwarsa. Jangan biarkan warna mencolok menutupi bentuk logo yang sebenarnya jelek!" 🛡️✨
             </p>
         </div>
@@ -127,25 +165,26 @@
             </div>
         </section>
 
-        <!-- ================= KUIS INTERAKTIF: KUIS SENGGOL BACOK ================= -->
-        <section class="phase-section">
-            <h3 class="phase-title">🔥 Kuis Interaktif: "Kuis Senggol Bacok" (Pertemuan 7)</h3>
-            <div class="card quiz-card-container">
-                <h4>Uji Pemahaman Identitas Visual & Logo!</h4>
-                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Pilih jawaban yang paling benar. Respon instan langsung muncul saat Anda mengklik pilihan.</p>
-                
-                <div id="quiz-container">
-                    <!-- Soal Kuis dirender dinamis via JavaScript -->
-                </div>
+       <!-- ================= KUIS INTERAKTIF: KUIS SENGGOL BACOK ================= -->
+<section class="phase-section">
+    <h3 class="phase-title">🔥 Kuis Interaktif: "Kuis Senggol Bacok" (Pertemuan 7)</h3>
+    <div class="card quiz-card-container">
+        <h4>Uji Pemahaman Identitas Visual & Logo!</h4>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted, #64748b);">
+            Pilih jawaban yang paling benar. Respon instan langsung muncul saat Anda mengklik pilihan.
+        </p>
+        
+        <div id="quiz-container" role="region" aria-label="Wadah Pertanyaan Kuis">
+            <!-- Soal Kuis dirender dinamis via JavaScript -->
+        </div>
 
-                <div id="quiz-summary" class="quiz-result-box" style="display: none; margin-top: 1.5rem;">
-                    <h3>Skor Akhir Kuis Anda:</h3>
-                    <p id="summary-score-text"></p>
-                    <button class="tab-btn active" onclick="resetQuiz()" style="margin-top: 1rem;">Ulangi Kuis</button>
-                </div>
-            </div>
-        </section>
-
+        <div id="quiz-summary" class="quiz-result-box" style="display: none; margin-top: 1.5rem;">
+            <h3>Skor Akhir Kuis Anda:</h3>
+            <p id="summary-score-text"></p>
+            <button class="quiz-reset-btn" onclick="resetQuiz()" style="margin-top: 1rem;">Ulangi Kuis</button>
+        </div>
+    </div>
+</section>
         <!-- Aktivitas Praktik / Tugas Kelas -->
         <section class="phase-section">
             <h3 class="phase-title">🛠️ Aktivitas Praktik Lab Komputer</h3>
@@ -239,159 +278,163 @@
         }
 
         // Data 10 Soal Kuis Pertemuan 7 Logo & Identitas Visual
-        const quizData = [
-            {
-                question: "1. Mengapa dalam standar pembuatan logo profesional kita wajib mendesain bentuk dasarnya dalam warna hitam-putih (monokrom) terlebih dahulu?",
-                options: ["Agar hemat tinta printer sekolah", "Untuk menguji apakah bentuk dan kontras logo tetap kuat tanpa bergantung pada warna", "Karena aturan menteri pendidikan", "Agar file CorelDRAW tidak error"],
-                answer: 1,
-                explanation: "Tepat! Bentuk hitam-putih menguji kekuatan struktur dan keterbacaan logo secara fundamental."
-            },
-            {
-                question: "2. Apa arti dari prinsip skalabilitas (*scalability*) pada sebuah desain logo?",
-                options: ["Logo bisa diubah menjadi file bitmap kapan saja", "Logo tetap terlihat jelas, tajam, dan mudah dikenali baik dicetak sangat kecil maupun sangat besar", "Logo harus memiliki ukuran file di bawah 1 MB", "Logo wajib menggunakan efek 3D"],
-                answer: 1,
-                explanation: "Benar! Skalabilitas memastikan logo fleksibel di berbagai ukuran media."
-            },
-            {
-                question: "3. Apa nama tipe logo yang hanya berupa teks nama merek/perusahaan tanpa simbol bergambar (contoh: Sony atau Google)?",
-                options: ["Logomark", "Logotype / Wordmark", "Emblem", "Badge 3D"],
-                answer: 1,
-                explanation: "Tepat! Logotype atau Wordmark adalah jenis logo berbasis tipografi nama merek."
-            },
-            {
-                question: "4. Apa nama tipe logo yang berupa simbol atau ikon visual murni tanpa teks (contoh: ikon buah apel digigit milik Apple)?",
-                options: ["Logomark / Icon", "Paragraph Text", "Paragraph Box", "Watermark"],
-                answer: 0,
-                explanation: "Hebat! Logomark adalah simbol grafis ikonik yang mewakili merek."
-            },
-            {
-                question: "5. Apa fungsi utama dari penggunaan Grid System (garis bantu/guidelines) saat merancang logo di CorelDRAW?",
-                options: ["Menghias lembar kerja agar berwarna-warni", "Menjaga proporsi, keseimbangan, dan kesimetrisan bentuk logo secara matematis", "Mengunci komputer dari virus", "Mempercepat proses ekspor ke PDF"],
-                answer: 1,
-                explanation: "Tepat! Grid system memastikan logo proporsional dan presisi secara geometris."
-            },
-            {
-                question: "6. Mengapa sebuah logo sebaiknya dihindari dari detail yang terlalu rumit dan kecil?",
-                options: ["Karena akan hancur dan tidak terbaca jika dicetak dalam ukuran kecil (misal di stempel atau pin)", "Karena dilarang oleh undang-undang hak cipta", "Karena membuat komputer lambat", "Karena format file harus bitmap"],
-                answer: 0,
-                explanation: "Benar! Detail rumit akan pecah dan hilang bentuknya saat diperkecil."
-            },
-            {
-                question: "7. Apa yang dimaksud dengan filosofi bentuk dalam perancangan identitas visual?",
-                options: ["Harga pembuatan logo yang mahal", "Alasan rasional dan makna di balik pemilihan bentuk, garis, atau sudut logo yang mewakili nilai organisasi", "Jumlah warna yang digunakan pada logo", "Jenis software yang dipakai mendesain"],
-                answer: 1,
-                explanation: "Tepat! Filosofi memberikan kedalaman makna dan cerita di balik visual logo."
-            },
-            {
-                question: "8. Tipe logo apakah yang menempatkan teks di dalam sebuah bingkai lencana atau lambang (sering digunakan instansi atau klub)?",
-                options: ["Logotype", "Emblem", "Flat Vector", "Raster Graphic"],
-                answer: 1,
-                explanation: "Betul! Emblem menggabungkan teks dan simbol di dalam satu bingkai lencana."
-            },
-            {
-                question: "9. Dalam prinsip desain identitas visual, apa arti dari sifat keabadian (*timeless*)?",
-                options: ["Logo tidak akan pernah bisa dihapus dari komputer", "Logo tetap relevan dan terlihat modern meskipun telah lewat puluhan tahun", "Logo harus dibuat menggunakan animasi bergerak", "Logo harus berganti bentuk setiap bulan"],
-                answer: 1,
-                explanation: "Tepat! Desain yang timeless tidak lekang oleh tren zaman yang cepat berubah."
-            },
-            {
-                question: "10. Apa langkah awal terbaik sebelum mulai membuka software CorelDRAW untuk membuat logo baru?",
-                options: ["Langsung mewarnai layar dengan warna pelangi", "Membuat sketsa kasar ide bentuk di buku catatan terlebih dahulu", "Mencari game online", "Mematikan lampu ruangan"],
-                answer: 1,
-                explanation: "Benar! Membuat sketsa konseptual di kertas adalah fondasi awal desainer profesional sebelum digitalisasi."
-            }
-        ];
+const quizData = [
+    {
+        question: "1. Mengapa dalam standar pembuatan logo profesional kita wajib mendesain bentuk dasarnya dalam warna hitam-putih (monokrom) terlebih dahulu?",
+        options: ["Agar hemat tinta printer sekolah", "Untuk menguji apakah bentuk dan kontras logo tetap kuat tanpa bergantung pada warna", "Karena aturan menteri pendidikan", "Agar file CorelDRAW tidak error"],
+        answer: 1,
+        explanation: "Tepat! Bentuk hitam-putih menguji kekuatan struktur dan keterbacaan logo secara fundamental."
+    },
+    {
+        question: "2. Apa arti dari prinsip skalabilitas (*scalability*) pada sebuah desain logo?",
+        options: ["Logo bisa diubah menjadi file bitmap kapan saja", "Logo tetap terlihat jelas, tajam, dan mudah dikenali baik dicetak sangat kecil maupun sangat besar", "Logo harus memiliki ukuran file di bawah 1 MB", "Logo wajib menggunakan efek 3D"],
+        answer: 1,
+        explanation: "Benar! Skalabilitas memastikan logo fleksibel di berbagai ukuran media."
+    },
+    {
+        question: "3. Apa nama tipe logo yang hanya berupa teks nama merek/perusahaan tanpa simbol bergambar (contoh: Sony atau Google)?",
+        options: ["Logomark", "Logotype / Wordmark", "Emblem", "Badge 3D"],
+        answer: 1,
+        explanation: "Tepat! Logotype atau Wordmark adalah jenis logo berbasis tipografi nama merek."
+    },
+    {
+        question: "4. Apa nama tipe logo yang berupa simbol atau ikon visual murni tanpa teks (contoh: ikon buah apel digigit milik Apple)?",
+        options: ["Logomark / Icon", "Paragraph Text", "Paragraph Box", "Watermark"],
+        answer: 0,
+        explanation: "Hebat! Logomark adalah simbol grafis ikonik yang mewakili merek."
+    },
+    {
+        question: "5. Apa fungsi utama dari penggunaan Grid System (garis bantu/guidelines) saat merancang logo di CorelDRAW?",
+        options: ["Menghias lembar kerja agar berwarna-warni", "Menjaga proporsi, keseimbangan, dan kesimetrisan bentuk logo secara matematis", "Mengunci komputer dari virus", "Mempercepat proses ekspor ke PDF"],
+        answer: 1,
+        explanation: "Tepat! Grid system memastikan logo proporsional dan presisi secara geometris."
+    },
+    {
+        question: "6. Mengapa sebuah logo sebaiknya dihindari dari detail yang terlalu rumit dan kecil?",
+        options: ["Karena akan hancur dan tidak terbaca jika dicetak dalam ukuran kecil (misal di stempel atau pin)", "Karena dilarang oleh undang-undang hak cipta", "Karena membuat komputer lambat", "Karena format file harus bitmap"],
+        answer: 0,
+        explanation: "Benar! Detail rumit akan pecah dan hilang bentuknya saat diperkecil."
+    },
+    {
+        question: "7. Apa yang dimaksud dengan filosofi bentuk dalam perancangan identitas visual?",
+        options: ["Harga pembuatan logo yang mahal", "Alasan rasional dan makna di balik pemilihan bentuk, garis, atau sudut logo yang mewakili nilai organisasi", "Jumlah warna yang digunakan pada logo", "Jenis software yang dipakai mendesain"],
+        answer: 1,
+        explanation: "Tepat! Filosofi memberikan kedalaman makna dan cerita di balik visual logo."
+    },
+    {
+        question: "8. Tipe logo apakah yang menempatkan teks di dalam sebuah bingkai lencana atau lambang (sering digunakan instansi atau klub)?",
+        options: ["Logotype", "Emblem", "Flat Vector", "Raster Graphic"],
+        answer: 1,
+        explanation: "Betul! Emblem menggabungkan teks dan simbol di dalam satu bingkai lencana."
+    },
+    {
+        question: "9. Dalam prinsip desain identitas visual, apa arti dari sifat keabadian (*timeless*)?",
+        options: ["Logo tidak akan pernah bisa dihapus dari komputer", "Logo tetap relevan dan terlihat modern meskipun telah lewat puluhan tahun", "Logo harus dibuat menggunakan animasi bergerak", "Logo harus berganti bentuk setiap bulan"],
+        answer: 1,
+        explanation: "Tepat! Desain yang timeless tidak lekang oleh tren zaman yang cepat berubah."
+    },
+    {
+        question: "10. Apa langkah awal terbaik sebelum mulai membuka software CorelDRAW untuk membuat logo baru?",
+        options: ["Langsung mewarnai layar dengan warna pelangi", "Membuat sketsa kasar ide bentuk di buku catatan terlebih dahulu", "Mencari game online", "Mematikan lampu ruangan"],
+        answer: 1,
+        explanation: "Benar! Membuat sketsa konseptual di kertas adalah fondasi awal desainer profesional sebelum digitalisasi."
+    }
+];
 
-        let answeredCount = 0;
-        let totalScore = 0;
+let answeredCount = 0;
+let totalScore = 0;
 
-        function renderQuiz() {
-            const container = document.getElementById('quiz-container');
-            container.innerHTML = '';
-            answeredCount = 0;
-            totalScore = 0;
-            document.getElementById('quiz-summary').style.display = 'none';
+function renderQuiz() {
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = '';
+    answeredCount = 0;
+    totalScore = 0;
+    document.getElementById('quiz-summary').style.display = 'none';
 
-            quizData.forEach((q, index) => {
-                let optionsHtml = '';
-                q.options.forEach((opt, optIndex) => {
-                    optionsHtml += `
-                        <button class="quiz-choice-btn" id="q${index}-opt${optIndex}" onclick="checkAnswer(${index}, ${optIndex})">
-                            ${opt}
-                        </button>
-                    `;
-                });
+    quizData.forEach((q, index) => {
+        let optionsHtml = '';
+        q.options.forEach((opt, optIndex) => {
+            optionsHtml += `
+                <button type="button" class="quiz-choice-btn" id="q${index}-opt${optIndex}" onclick="checkAnswer(${index}, ${optIndex})">
+                    ${opt}
+                </button>
+            `;
+        });
 
-                container.innerHTML += `
-                    <div class="quiz-question-box" id="q-box-${index}">
-                        <p class="quiz-q-title"><strong>${q.question}</strong></p>
-                        <div class="quiz-options-grid">${optionsHtml}</div>
-                        <div id="feedback-${index}" class="quiz-feedback-msg" style="display: none;"></div>
-                    </div>
-                `;
-            });
+        container.innerHTML += `
+            <div class="quiz-question-box" id="q-box-${index}">
+                <p class="quiz-q-title"><strong>${q.question}</strong></p>
+                <div class="quiz-options-grid">${optionsHtml}</div>
+                <div id="feedback-${index}" class="quiz-feedback-msg" style="display: none;"></div>
+            </div>
+        `;
+    });
+}
+
+function checkAnswer(qIndex, selectedOpt) {
+    const qData = quizData[qIndex];
+    const feedbackEl = document.getElementById(`feedback-${qIndex}`);
+    const boxEl = document.getElementById(`q-box-${qIndex}`);
+    
+    // Nonaktifkan semua tombol pada soal ini setelah dipilih
+    for (let i = 0; i < qData.options.length; i++) {
+        const btn = document.getElementById(`q${qIndex}-opt${i}`);
+        btn.disabled = true;
+        if (i === qData.answer) {
+            btn.classList.add('correct-choice');
+        } else if (i === selectedOpt) {
+            btn.classList.add('wrong-choice');
         }
+    }
 
-        function checkAnswer(qIndex, selectedOpt) {
-            const qData = quizData[qIndex];
-            const feedbackEl = document.getElementById(`feedback-${qIndex}`);
-            const boxEl = document.getElementById(`q-box-${qIndex}`);
-            
-            for (let i = 0; i < qData.options.length; i++) {
-                const btn = document.getElementById(`q${qIndex}-opt${i}`);
-                btn.disabled = true;
-                if (i === qData.answer) {
-                    btn.classList.add('correct-choice');
-                } else if (i === selectedOpt) {
-                    btn.classList.add('wrong-choice');
-                }
-            }
+    if (selectedOpt === qData.answer) {
+        totalScore += 10;
+        feedbackEl.className = "quiz-feedback-msg feedback-success";
+        feedbackEl.innerHTML = `✅ <strong>Benar!</strong> ${qData.explanation}`;
+    } else {
+        feedbackEl.className = "quiz-feedback-msg feedback-error";
+        feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> ${qData.explanation}`;
+    }
 
-            if (selectedOpt === qData.answer) {
-                totalScore += 10;
-                feedbackEl.className = "quiz-feedback-msg feedback-success";
-                feedbackEl.innerHTML = `✅ <strong>Benar!</strong> ${qData.explanation}`;
-            } else {
-                feedbackEl.className = "quiz-feedback-msg feedback-error";
-                feedbackEl.innerHTML = `❌ <strong>Kurang tepat.</strong> ${qData.explanation}`;
-            }
+    feedbackEl.style.display = 'block';
+    boxEl.style.borderLeft = (selectedOpt === qData.answer) ? "4px solid #10b981" : "4px solid #ef4444";
 
-            feedbackEl.style.display = 'block';
-            boxEl.style.borderLeft = (selectedOpt === qData.answer) ? "4px solid #10b981" : "4px solid #ef4444";
+    answeredCount++;
+    if (answeredCount === quizData.length) {
+        showSummary();
+    }
+}
 
-            answeredCount++;
-            if (answeredCount === quizData.length) {
-                showSummary();
-            }
-        }
+function showSummary() {
+    const summaryBox = document.getElementById('quiz-summary');
+    const scoreText = document.getElementById('summary-score-text');
+    
+    let message = `Total Skor Anda: <strong>${totalScore} / 100</strong>. `;
+    if (totalScore >= 80) {
+        message += "🌟 Luar biasa! Pemahaman Anda mengenai standar pembuatan logo profesional sudah sangat matang.";
+    } else if (totalScore >= 60) {
+        message += "👍 Bagus, pertahankan dan terus asah kreativitas bentuk logonya.";
+    } else {
+        message += "📚 Yuk baca kembali ringkasan materi logo di atas!";
+    }
+    
+    scoreText.innerHTML = message;
+    summaryBox.style.display = 'block';
+    summaryBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
 
-        function showSummary() {
-            const summaryBox = document.getElementById('quiz-summary');
-            const scoreText = document.getElementById('summary-score-text');
-            
-            let message = `Total Skor Anda: <strong>${totalScore} / 100</strong>. `;
-            if (totalScore >= 80) {
-                message += "🌟 Luar biasa! Pemahaman Anda mengenai standar pembuatan logo profesional sudah sangat matang.";
-            } else if (totalScore >= 60) {
-                message += "👍 Bagus, pertahankan dan terus asah kreativitas bentuk logonya.";
-            } else {
-                message += "📚 Yuk baca kembali ringkasan materi logo di atas!";
-            }
-            
-            scoreText.innerHTML = message;
-            summaryBox.style.display = 'block';
-            window.scrollTo({ top: summaryBox.offsetTop - 100, behavior: 'smooth' });
-        }
+function resetQuiz() {
+    renderQuiz();
+    document.getElementById('quiz-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
-        function resetQuiz() {
-            renderQuiz();
-            window.scrollTo({ top: document.getElementById('quiz-container').offsetTop - 100, behavior: 'smooth' });
-        }
-
-        window.onload = function() {
-            renderDetectiveGame();
-            renderQuiz();
-        };
+window.onload = function() {
+    // Pastikan fungsi lain aman dipanggil jika ada
+    if (typeof renderDetectiveGame === 'function') {
+        renderDetectiveGame();
+    }
+    renderQuiz();
+};
     </script>
 </body>
 </html>
