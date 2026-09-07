@@ -73,7 +73,6 @@ body {
     padding: 0.75rem 1rem;
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
-    background-color: var(--header-bg);
     transition: background-color 0.3s ease;
 }
 
@@ -243,33 +242,7 @@ footer {
     margin-top: 3rem;
 }
 
-/* --- RESPONSIVE LAYOUT MOBILE --- */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .semester-tabs {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .tab-btn {
-        text-align: center;
-        font-size: 0.75rem;
-        padding: 0.5rem;
-    }
-
-    .theme-toggle-btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .header-container h1 {
-        font-size: 1.35rem;
-    }
-   /* --- CSS TAMBAHAN UNTUK HALAMAN PERTEMUAN & KUIS (MODERN VERSION) --- */
+/* --- CSS TAMBAHAN UNTUK HALAMAN PERTEMUAN & KUIS --- */
 .lesson-nav {
     display: flex;
     justify-content: space-between;
@@ -278,9 +251,9 @@ footer {
 }
 
 .nav-btn-link {
-    background-color: var(--card-bg, #ffffff);
-    border: 1px solid var(--card-border, #e2e8f0);
-    color: var(--text-color, #1e293b);
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
     padding: 0.6rem 1.25rem;
     font-size: 0.875rem;
     font-weight: 500;
@@ -291,27 +264,27 @@ footer {
 }
 
 .nav-btn-link:hover {
-    border-color: var(--primary-color, #6366f1);
-    color: var(--primary-color, #6366f1);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
 }
 
 .nav-btn-link.primary-link {
-    background-color: var(--primary-color, #6366f1);
+    background-color: var(--primary-color);
     color: #ffffff;
-    border-color: var(--primary-color, #6366f1);
+    border-color: var(--primary-color);
 }
 
 .nav-btn-link.primary-link:hover {
-    background-color: var(--primary-hover, #4f46e5);
+    background-color: var(--primary-hover);
     color: #ffffff;
 }
 
 .meeting-badge-large {
     display: inline-block;
-    background-color: var(--badge-bg, #e0e7ff);
-    color: var(--badge-text, #4338ca);
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
     font-size: 0.85rem;
     font-weight: 600;
     padding: 0.4rem 1rem;
@@ -328,7 +301,7 @@ footer {
 
 .lesson-list {
     padding-left: 1.25rem;
-    color: var(--text-muted, #64748b);
+    color: var(--text-muted);
     font-size: 0.875rem;
     display: flex;
     flex-direction: column;
@@ -336,7 +309,7 @@ footer {
 }
 
 .action-card {
-    border-left: 4px solid var(--primary-color, #6366f1);
+    border-left: 4px solid var(--primary-color);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -345,137 +318,6 @@ footer {
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
 }
 
-/* Styling Tambahan untuk Kuis Modern */
-.quiz-card-container {
-    padding: 2rem;
-    border-radius: 16px;
-    background: var(--card-bg, #ffffff);
-    border: 1px solid var(--card-border, #e2e8f0);
-}
-
-.quiz-question-box {
-    margin-bottom: 1.5rem;
-    padding: 1.5rem;
-    border-radius: 12px;
-    background: var(--subtle-bg, #f8fafc);
-    border: 1px solid var(--card-border, #e2e8f0);
-    transition: all 0.3s ease;
-}
-
-.quiz-q-title {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: var(--text-color, #1e293b);
-}
-
-.quiz-options-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-}
-
-@media (min-width: 768px) {
-    .quiz-options-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.quiz-choice-btn {
-    background: var(--card-bg, #ffffff);
-    border: 1px solid var(--card-border, #cbd5e1);
-    color: var(--text-color, #1e293b);
-    padding: 0.85rem 1rem;
-    text-align: left;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.quiz-choice-btn:hover:not(:disabled) {
-    background-color: var(--primary-subtle, #eef2ff);
-    border-color: var(--primary-color, #6366f1);
-    color: var(--primary-color, #6366f1);
-}
-
-.quiz-choice-btn:disabled {
-    cursor: default;
-    opacity: 0.8;
-}
-
-.quiz-choice-btn.correct-choice {
-    background-color: #d1fae5 !important;
-    border-color: #10b981 !important;
-    color: #065f46 !important;
-    font-weight: 600;
-}
-
-.quiz-choice-btn.wrong-choice {
-    background-color: #fee2e2 !important;
-    border-color: #ef4444 !important;
-    color: #991b1b !important;
-}
-
-.quiz-feedback-msg {
-    margin-top: 1rem;
-    padding: 0.85rem 1rem;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-.feedback-success {
-    background-color: #ecfdf5;
-    color: #065f46;
-    border: 1px solid #a7f3d0;
-}
-
-.feedback-error {
-    background-color: #fef2f2;
-    color: #991b1b;
-    border: 1px solid #fecaca;
-}
-
-.quiz-result-box {
-    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-    color: #ffffff;
-    padding: 2rem;
-    border-radius: 16px;
-    text-align: center;
-    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.3);
-}
-
-.quiz-result-box h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
-}
-
-.quiz-result-box p {
-    color: #e0e7ff;
-    font-size: 1rem;
-}
-
-.quiz-reset-btn {
-    background-color: #ffffff;
-    color: #4f46e5;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.quiz-reset-btn:hover {
-    background-color: #f8fafc;
-    transform: scale(1.05);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-4px); }
-    to { opacity: 1; transform: translateY(0); }
-}
 /* --- HEADER KARTU & IKON --- */
 .header-card-style {
     background-color: var(--card-bg);
@@ -535,62 +377,65 @@ footer {
 
 /* --- KUIS SENGGOL BACOK STYLING (REAL-TIME) --- */
 .quiz-card-container {
-    border-color: var(--primary-color);
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
 }
 
 .quiz-question-box {
     background-color: var(--bg-color);
     border: 1px solid var(--card-border);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    transition: border-color 0.3s ease;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
 }
 
 .quiz-q-title {
-    font-size: 0.95rem;
-    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
     color: var(--text-color);
 }
 
-/* Pastikan bagian ini diatur secara column agar opsi jawaban ke bawah */
 .quiz-options-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 0.75rem !important;
-    margin-bottom: 1.5rem !important;
-.quiz-choice-btn {
-    display: inline-block !important;
-    width: fit-content !important;
-    max-width: 100% !important;
-    text-align: left !important;
-    background-color: transparent !important;
-    border: 1px solid var(--card-border) !important;
-    color: var(--text-color) !important;
-    padding: 0.75rem 1.25rem !important;
-    font-size: 0.9rem !important;
-    font-weight: 500 !important;
-    border-radius: 10px !important; /* Membuat sudut lebih melengkung modern (smooth rounded) */
-    cursor: pointer !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important; /* Efek transisi halus */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
 }
 
-/* Efek Hover Modern: Bergeser sedikit ke kanan dan berubah warna aksen */
+.quiz-choice-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .quiz-choice-btn:hover:not(:disabled) {
-    background-color: var(--accent-bg) !important;
-    border-color: var(--primary-color) !important;
-    color: var(--primary-color) !important;
-    transform: translateX(4px); /* Efek interaktif bergerak halus */
+    background-color: var(--accent-bg);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateX(4px);
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
 }
 
 .quiz-choice-btn:disabled {
-    cursor: default !important;
-    opacity: 0.9 !important;
-    transform: none !important;
+    cursor: default;
+    opacity: 0.9;
+    transform: none;
 }
+
 .correct-choice {
     background-color: rgba(16, 185, 129, 0.15) !important;
     border-color: #10b981 !important;
@@ -599,16 +444,17 @@ footer {
 }
 
 .wrong-choice {
-    background-color: rgba(219, 19, 19, 0.15) !important;
+    background-color: rgba(239, 68, 68, 0.15) !important;
     border-color: #ef4444 !important;
     color: #ef4444 !important;
 }
 
 .quiz-feedback-msg {
-    margin-top: 0.75rem;
-    padding: 0.6rem 0.8rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    animation: fadeIn 0.3s ease-in-out;
 }
 
 .feedback-success {
@@ -624,27 +470,42 @@ footer {
 }
 
 .quiz-result-box {
-    background-color: var(--accent-bg);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: #ffffff;
     border: 1px solid var(--primary-color);
-    padding: 1.5rem;
-    border-radius: 8px;
+    padding: 2rem;
+    border-radius: 16px;
     text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
 }
 
 .quiz-result-box h3 {
     margin-bottom: 0.5rem;
-    color: var(--text-color);
+    font-size: 1.25rem;
+    color: #ffffff;
 }
-/* Responsif Mobile Header Kartu */
-@media (max-width: 768px) {
-    .header-card-style {
-        flex-direction: column;
-        text-align: center;
-    }
-    .header-text-box h1 {
-        font-size: 1.25rem;
-    }
+
+.quiz-result-box p {
+    color: #e0e7ff;
+    font-size: 1rem;
 }
+
+.quiz-reset-btn {
+    background-color: #ffffff;
+    color: var(--primary-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.quiz-reset-btn:hover {
+    background-color: #f8fafc;
+    transform: scale(1.05);
+}
+
 /* --- CSS TAMBAHAN MOCKUP ILUSTRASI HIRARKI --- */
 .mockup-poster {
     background-color: var(--bg-color);
@@ -701,4 +562,41 @@ footer {
     padding: 0.25rem;
     border-radius: 4px;
     margin-top: 0.25rem;
+}
+
+/* --- RESPONSIVE LAYOUT MOBILE --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .semester-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tab-btn {
+        text-align: center;
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+
+    .theme-toggle-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-container h1 {
+        font-size: 1.35rem;
+    }
+
+    .header-card-style {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-text-box h1 {
+        font-size: 1.25rem;
+    }
 }
